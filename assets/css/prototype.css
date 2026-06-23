@@ -1,0 +1,214 @@
+/* =============================================================
+   ALMAVIVA — Prototype-only styles
+   Loaded on prototype pages IN ADDITION TO assets/css/styles.css.
+   NOT for production use. Remove this stylesheet before launch.
+   ============================================================= */
+
+/* --- Prototype review banner --- */
+.proto-banner {
+  background: #E8C250;
+  color: #4A3200;
+  text-align: center;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 9px 20px;
+  position: relative;
+  z-index: 200;
+}
+
+/* --- Program page hero --- */
+.prog-hero {
+  background: radial-gradient(120% 100% at 70% -5%, #EFE1CF 0%, #F5F0E7 60%);
+  padding: 140px 40px 80px;
+  border-bottom: 1px solid rgba(35,39,30,.08);
+}
+.prog-hero__inner { max-width: var(--maxw); margin-inline: auto; }
+.prog-hero__eyebrow { display: flex; align-items: center; gap: 12px; margin-bottom: 24px; }
+.prog-hero__back { font-size: 13px; font-weight: 700; color: var(--accent); text-decoration: none; display: inline-flex; align-items: center; gap: 4px; }
+.prog-hero__back:hover { text-decoration: underline; }
+.prog-hero__title {
+  font-family: 'Spectral', Georgia, serif;
+  font-weight: 600;
+  font-size: clamp(38px, 8vw, 84px);
+  line-height: .94;
+  color: var(--olive);
+  letter-spacing: -1.5px;
+  margin-bottom: 22px;
+}
+.prog-hero__lead {
+  font-family: 'Spectral', Georgia, serif;
+  font-style: italic;
+  font-size: clamp(17px, 2.5vw, 22px);
+  line-height: 1.42;
+  color: var(--ink);
+  max-width: 600px;
+  margin-bottom: 34px;
+}
+.prog-hero__actions { display: flex; flex-wrap: wrap; gap: 0; }
+
+/* --- Program content sections --- */
+.prog-section { border-bottom: 1px solid var(--line); }
+.prog-section__label { display: flex; align-items: center; gap: 12px; margin-bottom: 14px; }
+.prog-section__title {
+  font-family: 'Spectral', Georgia, serif;
+  font-weight: 600;
+  font-size: clamp(22px, 4vw, 32px);
+  color: var(--ink);
+  margin-bottom: 20px;
+}
+.prog-body { font-size: clamp(16px, 2.5vw, 18px); line-height: 1.7; color: #52564A; }
+.prog-body p { margin-bottom: 16px; }
+.prog-body p:last-child { margin-bottom: 0; }
+
+/* --- For / Not for two-column --- */
+.for-grid { display: grid; grid-template-columns: 1fr 1fr; border: 1px solid var(--line); }
+.for-col { padding: 32px; }
+.for-col--yes { background: #ECEFE4; }
+.for-col--no  { background: #F7F3EB; }
+.for-col__title { font-size: 12px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 20px; }
+.for-col--yes .for-col__title { color: #4E5A37; }
+.for-col--no  .for-col__title { color: #857060; }
+
+/* --- Distinction block --- */
+.distinction {
+  background: var(--olive);
+  color: #EDEFE3;
+  padding: 36px 40px;
+  margin-top: 36px;
+}
+.distinction__label { font-size: 11px; font-weight: 800; letter-spacing: 2.5px; text-transform: uppercase; color: #C7D0AE; margin-bottom: 14px; }
+.distinction__items { display: flex; flex-direction: column; gap: 14px; }
+.distinction__item {
+  font-family: 'Spectral', Georgia, serif;
+  font-style: italic;
+  font-size: clamp(15px, 2vw, 18px);
+  line-height: 1.5;
+  padding-left: 18px;
+  border-left: 2px solid var(--amber);
+}
+
+/* --- Includes box --- */
+.includes-box { background: #F2EDE3; border: 1px solid var(--line); padding: 36px; }
+.includes-box__title { font-size: 12px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; color: var(--accent); margin-bottom: 20px; }
+.includes-note { font-size: 13px; color: #857060; margin-top: 14px; font-style: italic; }
+
+/* --- Phase grid --- */
+.phase-grid { display: grid; grid-template-columns: repeat(3, 1fr); border: 1px solid var(--line); }
+.phase { background: #fff; padding: 28px 24px; border-right: 1px solid var(--line); }
+.phase:last-child { border-right: 0; }
+.phase__num { font-family: 'Spectral', Georgia, serif; font-style: italic; font-size: 32px; color: var(--accent); margin-bottom: 10px; }
+.phase__title { font-weight: 700; font-size: 15px; color: var(--ink); margin-bottom: 8px; }
+.phase__text  { font-size: 14px; line-height: 1.55; color: #6A6E60; }
+
+/* --- 5 pillars grid (Intensivo) --- */
+.pillars-5 { display: grid; grid-template-columns: repeat(5, 1fr); border: 1px solid var(--line); }
+.pillar-5 { background: #fff; padding: 26px 20px; border-right: 1px solid var(--line); }
+.pillar-5:last-child { border-right: 0; }
+.pillar-5__num { font-family: 'Spectral', Georgia, serif; font-style: italic; font-size: 28px; color: var(--accent); margin-bottom: 10px; }
+.pillar-5__title { font-weight: 700; font-size: 14px; color: var(--ink); margin-bottom: 8px; }
+.pillar-5__text  { font-size: 13px; line-height: 1.5; color: #6A6E60; }
+
+/* --- FAQ (details/summary) --- */
+.faq-list { border: 1px solid var(--line); }
+.faq-item { border-bottom: 1px solid var(--line); background: #fff; }
+.faq-item:last-child { border-bottom: 0; }
+.faq-item summary {
+  cursor: pointer;
+  padding: 22px 32px;
+  font-family: 'Spectral', Georgia, serif;
+  font-weight: 600;
+  font-size: clamp(16px, 2vw, 18px);
+  color: var(--ink);
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary::after { content: '+'; font-size: 20px; color: var(--accent); flex-shrink: 0; }
+.faq-item[open] summary::after { content: '−'; }
+.faq-item[open] summary { border-bottom: 1px solid var(--line); }
+.faq-item .faq-a { padding: 20px 32px 26px; font-size: 16px; line-height: 1.7; color: #52564A; }
+
+/* --- Decision helper --- */
+.decision-helper { background: #fff; border: 1px solid var(--line); }
+.decision-list { list-style: none; }
+.decision-list li {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 24px;
+  align-items: center;
+  padding: 18px 32px;
+  border-bottom: 1px solid var(--line);
+  font-size: 15px;
+  line-height: 1.5;
+  color: #4A4E40;
+}
+.decision-list li:last-child { border-bottom: 0; }
+.decision-list__answer { font-weight: 700; color: var(--accent); white-space: nowrap; }
+.decision-list__answer a { color: inherit; text-decoration: underline; }
+
+/* --- Comparison table --- */
+.comparison-wrap { overflow-x: auto; }
+.comparison-table { width: 100%; border-collapse: collapse; font-size: 14px; }
+.comparison-table th { text-align: left; padding: 14px 20px; background: var(--olive); color: #EDEFE3; font-size: 11px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; }
+.comparison-table td { padding: 14px 20px; border-bottom: 1px solid var(--line); vertical-align: top; color: #4A4E40; }
+.comparison-table tr:nth-child(even) td { background: #F7F3EB; }
+.comparison-table td:first-child { font-weight: 600; }
+.comparison-table a { color: var(--accent); font-weight: 700; text-decoration: underline; text-underline-offset: 3px; }
+.table-note { font-size: 12px; color: #857060; margin-top: 14px; font-style: italic; }
+
+/* --- CTA strip --- */
+.cta-strip { background: var(--ink); color: #EDEFE3; text-align: center; padding: 88px 40px; }
+.cta-strip__title {
+  font-family: 'Spectral', Georgia, serif;
+  font-style: italic;
+  font-weight: 500;
+  font-size: clamp(22px, 4vw, 38px);
+  line-height: 1.25;
+  margin-bottom: 18px;
+  max-width: 600px;
+  margin-inline: auto;
+}
+.cta-strip__sub { font-size: 15px; color: #A8B097; margin-bottom: 32px; max-width: 480px; margin-inline: auto; line-height: 1.6; }
+
+/* --- Therapy note --- */
+.therapy-note { background: #E6EADA; border-left: 3px solid #4E5A37; padding: 22px 28px; margin-top: 32px; }
+.therapy-note p { font-size: 14px; line-height: 1.65; color: #3A4429; }
+
+/* --- PDF secondary link --- */
+.pdf-cta { display: inline-flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 700; color: var(--olive); text-decoration: underline; text-underline-offset: 4px; }
+.pdf-cta:hover { color: var(--accent); }
+
+/* --- Cohort notice --- */
+.cohort-notice { background: #F0E8D8; border: 1px solid #D2C8B0; padding: 22px 32px; text-align: center; font-size: 15px; line-height: 1.6; color: #4A3A20; }
+.cohort-notice strong { font-weight: 700; }
+
+/* ============================================================= */
+/* Responsive */
+/* ============================================================= */
+@media (max-width: 900px) {
+  .pillars-5 { grid-template-columns: repeat(3, 1fr); }
+  .pillar-5 { border-bottom: 1px solid var(--line); }
+}
+@media (max-width: 768px) {
+  .prog-hero { padding: 120px 24px 60px; }
+  .for-grid   { grid-template-columns: 1fr; }
+  .phase-grid { grid-template-columns: 1fr; }
+  .phase { border-right: 0; border-bottom: 1px solid var(--line); }
+  .phase:last-child { border-bottom: 0; }
+  .faq-item summary { padding: 18px 20px; }
+  .faq-item .faq-a  { padding: 16px 20px 22px; }
+  .decision-list li { grid-template-columns: 1fr; gap: 4px; padding: 16px 20px; }
+  .distinction { padding: 24px; }
+  .cta-strip { padding: 64px 24px; }
+  .pillars-5 { grid-template-columns: 1fr 1fr; }
+  .pillar-5 { border-right: 1px solid var(--line); }
+}
+@media (max-width: 480px) {
+  .pillars-5 { grid-template-columns: 1fr; }
+  .pillar-5 { border-right: 0; }
+}
