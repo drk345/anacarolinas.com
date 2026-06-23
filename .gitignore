@@ -1,0 +1,12 @@
+# Build tooling (not part of the deployed site)
+tools/node_modules/
+tools/source-bundle.html
+tools/*.generated.css
+tools/img-meta.json
+
+# OS / editor cruft
+.DS_Store
+Thumbs.db
+
+# Claude Code session data
+.claude/

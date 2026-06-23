@@ -1,0 +1,10 @@
+{
+  "name": "almaviva-build-tools",
+  "private": true,
+  "version": "1.0.0",
+  "description": "One-off build scripts (asset extraction + image optimization) for the ALMAVIVA site. Not deployed.",
+  "type": "commonjs",
+  "dependencies": {
+    "sharp": "^0.35.2"
+  }
+}
