@@ -52,7 +52,7 @@ de programa. Los puntos marcados [DECISION_REQUIRED] son los más críticos.
 
 - ¿Tienes bio aprobada para la página "Sobre mí" más extensa?
 - ¿Tienes credenciales / formaciones que quieras mencionar?
-- ¿Las redes sociales (Instagram, LinkedIn, YouTube) son correctas?
+- ~~¿Las redes sociales (Instagram, LinkedIn, YouTube) son correctas?~~ **Resuelto 2026-06-24:** LinkedIn y YouTube confirmados por la usuaria. LinkedIn: https://www.linkedin.com/in/anacarolinasegura/ · YouTube: https://www.youtube.com/@AnaCarolinaCoach
 - ¿Tienes testimonios reales con permiso explícito para publicar?
 
 ---
