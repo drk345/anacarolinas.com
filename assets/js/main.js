@@ -1,4 +1,4 @@
-// ALMAVIVA — minimal nav behavior (replaces the Claude Design runtime)
+// ALMAVIVA — minimal nav behavior
 (function () {
   var nav = document.querySelector('.site-nav');
   var toggle = document.getElementById('navToggle');

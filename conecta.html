@@ -5,59 +5,49 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>ALMAVIVA Conecta — Programa grupal · Ana Carolina S</title>
   <meta name="description" content="Un programa grupal de neuroeducación para comprender cómo funciona tu cerebro y empezar a entrenar nuevas respuestas, junto a otras personas que también empiezan.">
+  <link rel="canonical" href="https://anacarolinas.com/conecta.html">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="preload" as="font" type="font/woff2" href="assets/fonts/mulish-400-normal-latin.woff2" crossorigin>
   <link rel="preload" as="font" type="font/woff2" href="assets/fonts/spectral-600-normal-latin.woff2" crossorigin>
-  <link rel="stylesheet" href="assets/css/styles.css">
-  <link rel="stylesheet" href="assets/css/prototype.css">
+  <link rel="stylesheet" href="assets/css/editorial.css">
 </head>
 <body>
 
-<div class="proto-banner">Vista de revisión interna · contenido sujeto a aprobación</div>
-
-<div class="page">
-
   <!-- NAV -->
   <header class="site-nav">
-    <nav class="site-nav__inner">
-      <a class="brand" href="index.html">
-        <span class="brand__name">Ana Carolina</span>
-        <span class="brand__tag">Almaviva</span>
-      </a>
-      <button class="nav-toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="navLinks"><span></span><span></span><span></span></button>
-      <div class="nav-menu" id="navLinks">
-        <a class="nav-link" href="index.html#metodo">El método</a>
-        <a class="nav-link" href="programas.html">Programas</a>
-        <a class="nav-link" href="index.html#empresas">Empresas</a>
-        <a class="nav-link" href="sobre-ana.html">Sobre mí</a>
-        <a class="nav-cta" href="contacto.html">Reservar</a>
+    <nav class="site-nav__in">
+      <a class="ed-brand" href="index.html"><span class="ed-brand__name">Ana Carolina</span></a>
+      <button id="navToggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="navLinks"><span></span><span></span><span></span></button>
+      <div id="navLinks">
+        <a class="ed-nl" href="index.html">Inicio</a>
+        <a class="ed-nl is-active" href="programas.html">Programas</a>
+        <a class="ed-nl" href="sesiones-individuales.html">Sesiones individuales</a>
+        <a class="ed-nl" href="sobre-ana.html">Sobre mí</a>
+        <a class="ed-navcta" href="contacto.html">Reservar</a>
       </div>
     </nav>
   </header>
 
   <!-- HERO -->
-  <section class="prog-hero">
-    <div class="prog-hero__inner">
-      <div class="prog-hero__eyebrow">
-        <a class="prog-hero__back" href="programas.html">← Todos los programas</a>
-        <span style="color:var(--line)">·</span>
-        <span class="eyebrow">Bases en comunidad</span>
-      </div>
-      <h1 class="prog-hero__title">Entiende las bases.<br>En comunidad.</h1>
-      <p class="prog-hero__lead">Un programa grupal de neuroeducación para comprender cómo funciona tu cerebro y empezar a entrenar nuevas respuestas junto a otros.</p>
-      <div class="prog-hero__actions">
-        <a class="btn btn--primary" href="https://wa.me/4522256143" target="_blank" rel="noopener noreferrer">Agendar conversación inicial <span class="btn__arrow">→</span></a>
-        <a class="btn btn--ghost" href="programas.html">Ver todos los programas</a>
+  <section class="ed-pg-hero ed-sec--accent ed-tex">
+    <div class="ed-pg-hero__in">
+      <a class="ed-pg-hero__back" href="programas.html">← Todos los programas</a>
+      <div class="ed-eyebrow ed-eyebrow--light"><span class="ed-eyebrow__dash"></span><span class="ed-eyebrow__txt">Bases en comunidad</span></div>
+      <h1 class="ed-pg-hero__title">Entiende las bases.<br>En comunidad.</h1>
+      <p class="ed-pg-hero__lead">Un programa grupal de neuroeducación para comprender cómo funciona tu cerebro y empezar a entrenar nuevas respuestas junto a otros.</p>
+      <div class="ed-pg-hero__actions">
+        <a class="ed-btn ed-btn--cream" href="contacto.html">Agendar conversación inicial <span class="ed-btn__arrow">→</span></a>
+        <a class="ed-btn ed-btn--ghost" href="programas.html">Ver todos los programas</a>
       </div>
     </div>
   </section>
 
   <!-- QUÉ ES -->
-  <section class="prog-section" style="background:#F7F3EB">
-    <div class="container">
-      <div class="prog-section__label"><span class="label__dash"></span><span class="eyebrow">ALMAVIVA Conecta</span></div>
-      <h2 class="prog-section__title">El mapa. En grupo.</h2>
-      <div class="prog-body">
+  <section class="ed-sec--cream2 ed-tex">
+    <div class="ed-sec-body">
+      <div class="ed-eyebrow"><span class="ed-eyebrow__dash"></span><span class="ed-eyebrow__txt">ALMAVIVA Conecta</span></div>
+      <h2 class="ed-h2">El mapa. En grupo.</h2>
+      <div class="ed-prose">
         <p>ALMAVIVA Conecta es un programa de neuroeducación grupal que te da el mapa.</p>
         <p>A lo largo de ~6 semanas, explorarás los fundamentos del Método ALMAVIVA en un entorno de grupo: aprenderás cómo funciona el cerebro, reconocerás tus propios patrones y empezarás a practicar herramientas concretas de regulación y cambio.</p>
         <p>El grupo importa. Aprender junto a otras personas que también están en proceso crea algo que el trabajo individual no puede: resonancia, reconocimiento y comunidad.</p>
@@ -66,146 +56,137 @@
   </section>
 
   <!-- QUÉ EXPLORARÁS -->
-  <section class="prog-section" style="background:#F2EFE6">
-    <div class="container">
-      <div class="prog-section__label"><span class="label__dash"></span><span class="eyebrow">Contenidos</span></div>
-      <h2 class="prog-section__title">Qué explorarás en el programa</h2>
-      <p class="prog-body" style="margin-bottom:28px">Los temas del programa se estructuran en torno a los cinco pilares del Método ALMAVIVA:</p>
-      <div class="pillars-5">
-        <div class="pillar-5">
-          <div class="pillar-5__num">01</div>
-          <div class="pillar-5__title">El cerebro</div>
-          <p class="pillar-5__text">Cómo funciona y por qué tiene la capacidad de cambiar.</p>
+  <section class="ed-sec--cream ed-tex">
+    <div class="ed-sec-body">
+      <div class="ed-eyebrow"><span class="ed-eyebrow__dash"></span><span class="ed-eyebrow__txt">Contenidos</span></div>
+      <h2 class="ed-h2">Qué explorarás en el programa</h2>
+      <p class="ed-prose"><p>Los temas del programa se estructuran en torno a los cinco pilares del Método ALMAVIVA:</p></p>
+      <div class="ed-pillars">
+        <div class="ed-pillar">
+          <div class="ed-pillar__num">01</div>
+          <div class="ed-pillar__title">El cerebro</div>
+          <p>Cómo funciona y por qué tiene la capacidad de cambiar.</p>
         </div>
-        <div class="pillar-5">
-          <div class="pillar-5__num">02</div>
-          <div class="pillar-5__title">Patrones</div>
-          <p class="pillar-5__text">Tus respuestas automáticas y cómo reconocerlas en el día a día.</p>
+        <div class="ed-pillar">
+          <div class="ed-pillar__num">02</div>
+          <div class="ed-pillar__title">Patrones</div>
+          <p>Tus respuestas automáticas y cómo reconocerlas en el día a día.</p>
         </div>
-        <div class="pillar-5">
-          <div class="pillar-5__num">03</div>
-          <div class="pillar-5__title">Regulación</div>
-          <p class="pillar-5__text">El sistema nervioso y cómo entrenar más calma y claridad.</p>
+        <div class="ed-pillar">
+          <div class="ed-pillar__num">03</div>
+          <div class="ed-pillar__title">Regulación</div>
+          <p>El sistema nervioso y cómo entrenar más calma y claridad.</p>
         </div>
-        <div class="pillar-5">
-          <div class="pillar-5__num">04</div>
-          <div class="pillar-5__title">Práctica</div>
-          <p class="pillar-5__text">Herramientas somáticas y de acción para crear hábitos nuevos.</p>
+        <div class="ed-pillar">
+          <div class="ed-pillar__num">04</div>
+          <div class="ed-pillar__title">Práctica</div>
+          <p>Herramientas somáticas y de acción para crear hábitos nuevos.</p>
         </div>
-        <div class="pillar-5">
-          <div class="pillar-5__num">05</div>
-          <div class="pillar-5__title">Integración</div>
-          <p class="pillar-5__text">Construir desde tus propios recursos para sostener el cambio.</p>
+        <div class="ed-pillar">
+          <div class="ed-pillar__num">05</div>
+          <div class="ed-pillar__title">Integración</div>
+          <p>Construir desde tus propios recursos para sostener el cambio.</p>
         </div>
       </div>
-      <p class="table-note" style="margin-top:18px">Temario semanal específico pendiente de confirmación con Ana.</p>
+      <p class="ed-table-note ed-mt-xs">La estructura de cada semana se comparte al inicio de cada edición.</p>
     </div>
   </section>
 
-  <!-- PARA TI / NO ES PARA TI -->
-  <section class="prog-section" style="background:#EDE7DB">
-    <div class="container">
-      <h2 class="prog-section__title">¿Es para ti?</h2>
-      <div class="for-grid">
-        <div class="for-col for-col--yes">
-          <div class="for-col__title">Para ti si</div>
-          <ul class="checklist">
-            <li><span class="checklist__dot"></span><span>Quieres entender las bases del cerebro y los patrones antes de profundizar.</span></li>
-            <li><span class="checklist__dot"></span><span>Te gusta aprender y reflexionar en comunidad.</span></li>
-            <li><span class="checklist__dot"></span><span>Buscas un primer paso claro y estructurado en ALMAVIVA.</span></li>
-            <li><span class="checklist__dot"></span><span>Prefieres un formato grupal a uno individual.</span></li>
-            <li><span class="checklist__dot"></span><span>Quieres explorar el método antes de comprometerte a un proceso 1:1.</span></li>
+  <!-- ¿ES PARA TI? -->
+  <section class="ed-sec--cream3 ed-tex">
+    <div class="ed-sec-body">
+      <h2 class="ed-h2">Puede acompañarte si…</h2>
+      <div class="ed-check-2col">
+        <div class="ed-check-col--yes">
+          <div class="ed-check-col__title">Para ti si</div>
+          <ul class="ed-check-list">
+            <li><span class="ed-check-dot"></span><span>Quieres entender las bases del cerebro y los patrones antes de profundizar.</span></li>
+            <li><span class="ed-check-dot"></span><span>Te gusta aprender y reflexionar en comunidad.</span></li>
+            <li><span class="ed-check-dot"></span><span>Buscas un primer paso claro y estructurado en ALMAVIVA.</span></li>
+            <li><span class="ed-check-dot"></span><span>Prefieres un formato grupal a uno individual.</span></li>
+            <li><span class="ed-check-dot"></span><span>Quieres explorar el método antes de comprometerte a un proceso 1:1.</span></li>
           </ul>
         </div>
-        <div class="for-col for-col--no">
-          <div class="for-col__title">No es para ti si</div>
-          <ul class="checklist">
-            <li><span class="checklist__dot"></span><span>Ya sabes qué patrón concreto quieres trabajar en profundidad — eso es <a href="foco.html" style="color:var(--accent);font-weight:700">Foco</a>.</span></li>
-            <li><span class="checklist__dot"></span><span>Buscas un proceso individual completo de principio a fin — eso es <a href="intensivo.html" style="color:var(--accent);font-weight:700">Intensivo</a>.</span></li>
-            <li><span class="checklist__dot"></span><span>Necesitas claridad puntual sin estructura — eso son las <a href="sesiones-individuales.html" style="color:var(--accent);font-weight:700">Sesiones Individuales</a>.</span></li>
+        <div class="ed-check-col--no">
+          <div class="ed-check-col__title">No es para ti si</div>
+          <ul class="ed-check-list">
+            <li><span class="ed-check-dot"></span><span>Ya sabes qué patrón concreto quieres trabajar en profundidad — eso es <a href="foco.html">Foco</a>.</span></li>
+            <li><span class="ed-check-dot"></span><span>Buscas un proceso individual completo de principio a fin — eso es <a href="intensivo.html">Intensivo</a>.</span></li>
+            <li><span class="ed-check-dot"></span><span>Necesitas claridad puntual sin estructura — eso son las <a href="sesiones-individuales.html">Sesiones Individuales</a>.</span></li>
           </ul>
         </div>
       </div>
-
-      <div class="distinction">
-        <div class="distinction__label">Cómo se diferencia del Intensivo</div>
-        <div class="distinction__items">
-          <p class="distinction__item">Conecta te muestra el mapa; Intensivo te acompaña a recorrer el proceso completo.</p>
-          <p class="distinction__item">Conecta es neuroeducación en grupo — un primer paso para entender el método, tus patrones y las herramientas. El Intensivo es un proceso individual y profundo que recorre los cinco pilares con acompañamiento personalizado de principio a fin. Son complementarios, no competidores.</p>
-        </div>
+      <div class="ed-distinction">
+        <div class="ed-distinction__label">Cómo se diferencia del Intensivo</div>
+        <p>Conecta te muestra el mapa; Intensivo te acompaña a recorrer el proceso completo.</p>
+        <p>Conecta es neuroeducación en grupo — un primer paso para entender el método, tus patrones y las herramientas. El Intensivo es un proceso individual y profundo que recorre los cinco pilares con acompañamiento personalizado de principio a fin. Son complementarios, no competidores.</p>
       </div>
     </div>
   </section>
 
   <!-- QUÉ INCLUYE -->
-  <section class="prog-section" style="background:#F7F3EB">
-    <div class="container">
-      <h2 class="prog-section__title">Qué incluye</h2>
-
-      <!-- COHORT NOTICE -->
-      <div class="cohort-notice" style="margin-bottom:28px">
-        <strong>Próxima edición</strong> — Formato por confirmar con Ana. Si quieres saber cuándo comienza la próxima edición o apuntarte a la lista de interés, escríbenos.
+  <section class="ed-sec--cream2 ed-tex">
+    <div class="ed-sec-body">
+      <h2 class="ed-h2">Lo que encontrarás en el programa</h2>
+      <div class="ed-cohort">
+        <strong>Próxima edición</strong>La próxima edición se comunica cuando se abre un nuevo grupo. Si tienes interés, escríbenos y te avisamos.
       </div>
-
-      <div class="includes-box">
-        <div class="includes-box__title">El programa</div>
-        <ul class="checklist">
-          <li><span class="checklist__dot"></span><span>6 semanas de programa grupal</span></li>
-          <li><span class="checklist__dot"></span><span>6 clases en vivo de 60 minutos por Zoom, una por semana</span></li>
-          <li><span class="checklist__dot"></span><span>Grabaciones de todas las clases</span></li>
-          <li><span class="checklist__dot"></span><span>Comunidad privada de WhatsApp</span></li>
-          <li><span class="checklist__dot"></span><span>Prácticas semanales</span></li>
-          <li><span class="checklist__dot"></span><span>Acompañamiento grupal durante las 6 semanas</span></li>
-          <li><span class="checklist__dot"></span><span>Grupo pequeño <em>(número por confirmar con Ana)</em></span></li>
+      <div class="ed-includes">
+        <div class="ed-includes__title">El programa</div>
+        <ul class="ed-check-list ed-check-col--yes">
+          <li><span class="ed-check-dot"></span><span>6 semanas de programa grupal</span></li>
+          <li><span class="ed-check-dot"></span><span>6 clases en vivo de 60 minutos por Zoom, una por semana</span></li>
+          <li><span class="ed-check-dot"></span><span>Grabaciones de todas las clases</span></li>
+          <li><span class="ed-check-dot"></span><span>Comunidad privada de WhatsApp</span></li>
+          <li><span class="ed-check-dot"></span><span>Prácticas semanales</span></li>
+          <li><span class="ed-check-dot"></span><span>Acompañamiento grupal durante las 6 semanas</span></li>
+          <li><span class="ed-check-dot"></span><span>Grupo pequeño, para preservar la calidad del espacio compartido</span></li>
         </ul>
-        <p class="includes-note">Los precios no se muestran públicamente. Se gestionan en la conversación inicial.</p>
+        <p class="ed-includes-note">Los precios no se muestran públicamente. Se gestionan en la conversación inicial.</p>
       </div>
-      <div style="margin-top:28px">
-        <a class="pdf-cta" href="https://drive.google.com/file/d/1IF9ZR24Hmg1d7HQb4P8SOrjQUVNSKgVJ/view?usp=sharing" target="_blank" rel="noopener noreferrer">↓ Ver programa completo (PDF)</a>
+      <div class="ed-mt-md">
+        <a class="ed-pdf-cta" href="https://drive.google.com/file/d/1IF9ZR24Hmg1d7HQb4P8SOrjQUVNSKgVJ/view?usp=sharing" target="_blank" rel="noopener noreferrer">↓ Ver programa completo (PDF)</a>
       </div>
-      <div class="cohort-notice" style="margin-top:24px">
-        <strong>Antes de entrar</strong> — Puedes agendar una conversación inicial gratuita de 30–45 minutos. No es una llamada de venta: es un espacio para valorar si Conecta es el camino adecuado para ti ahora. Si no lo es, Ana te orientará con honestidad.
+      <div class="ed-cohort ed-mt-sm">
+        <strong>Antes de entrar</strong>Puedes agendar una conversación inicial. Es un espacio para valorar si Conecta es el camino adecuado para ti ahora. Si no lo es, Ana te orientará con honestidad.
       </div>
     </div>
   </section>
 
   <!-- THERAPY NOTE -->
-  <section style="background:#EDE7DB;border-bottom:1px solid var(--line)">
-    <div class="container" style="padding-top:40px;padding-bottom:40px">
-      <div class="therapy-note">
+  <section class="ed-sec--cream3 ed-tex">
+    <div class="ed-sec-body--sm">
+      <div class="ed-therapy">
         <p>ALMAVIVA es neuroeducación, práctica somática y coaching integrativo — educación aplicada y acompañamiento, no terapia clínica ni tratamiento médico.</p>
       </div>
     </div>
   </section>
 
   <!-- CTA FINAL -->
-  <section class="cta-strip">
-    <p class="cta-strip__title">Empieza a comprenderte<br>en comunidad.</p>
-    <p class="cta-strip__sub">Cuéntanos dónde estás y valoramos juntos si Conecta es el paso que buscas.</p>
-    <a class="btn btn--primary" href="https://wa.me/4522256143" target="_blank" rel="noopener noreferrer">Agendar conversación inicial <span class="btn__arrow">→</span></a>
+  <section class="ed-cta-strip ed-sec--olive ed-tex">
+    <p class="ed-cta-strip__title">Empieza a comprenderte<br>en comunidad.</p>
+    <p class="ed-cta-strip__sub">Cuéntanos dónde estás y valoramos juntos si Conecta es el paso que buscas.</p>
+    <a class="ed-btn ed-btn--cream" href="contacto.html">Agendar conversación inicial <span class="ed-btn__arrow">→</span></a>
   </section>
 
-  <!-- FOOTER -->
-  <footer class="site-footer">
-    <div class="site-footer__inner">
-      <div class="brand"><span class="brand__name">Ana Carolina</span><span class="brand__tag">Almaviva</span></div>
-      <div class="footer-links">
-        <a class="footer-link" href="https://www.instagram.com/ana.carolina.coach" target="_blank" rel="noopener noreferrer">Instagram</a>
-        <a class="footer-link" href="https://www.linkedin.com/in/anacarolinasegura/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-        <a class="footer-link" href="https://www.youtube.com/@AnaCarolinaCoach" target="_blank" rel="noopener noreferrer">YouTube</a>
-        <a class="footer-link" href="https://wa.me/4522256143" target="_blank" rel="noopener noreferrer">WhatsApp</a>
-        <a class="footer-link" href="privacidad.html">Privacidad</a>
+  <footer class="ed-footer">
+    <div class="ed-footer__in">
+      <div class="ed-footer__brand"><span class="ed-footer__name">Ana Carolina</span><span class="ed-footer__tag">Almaviva</span></div>
+      <div class="ed-footer__links">
+        <a class="ed-foot-link" href="https://www.instagram.com/ana.carolina.coach" target="_blank" rel="noopener noreferrer">Instagram</a>
+        <a class="ed-foot-link" href="https://www.linkedin.com/in/anacarolinasegura/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a class="ed-foot-link" href="https://www.youtube.com/@AnaCarolinaCoach" target="_blank" rel="noopener noreferrer">YouTube</a>
+        <a class="ed-foot-link" href="https://wa.me/4522256143" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+        <a class="ed-foot-link" href="privacidad.html">Privacidad</a>
       </div>
-      <span class="footer-copy">© 2026 Ana Carolina · ALMAVIVA Neurotraining</span>
+      <span class="ed-footer__copy">© 2026 Ana Carolina · ALMAVIVA Neurotraining</span>
     </div>
   </footer>
 
-  <a class="wa-float" href="https://wa.me/4522256143" target="_blank" rel="noopener noreferrer" aria-label="Escríbeme por WhatsApp">
+  <a class="ed-wa" href="https://wa.me/4522256143" target="_blank" rel="noopener noreferrer" aria-label="Escríbeme por WhatsApp">
     <svg width="32" height="32" viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M19.05 4.91A9.82 9.82 0 0 0 12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.004c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01zM12.04 20.15h-.004a8.23 8.23 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.21 8.21 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.25-8.24 2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.24 8.24zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.12-.16.25-.64.81-.78.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.01-.38.11-.5.11-.11.25-.29.37-.43.13-.14.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.4-.42-.56-.43-.14-.01-.31-.01-.48-.01-.17 0-.43.06-.66.31-.23.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.14-1.18-.06-.11-.22-.17-.47-.29z"></path></svg>
   </a>
 
-</div>
-
-<script src="assets/js/main.js" defer></script>
+  <script src="assets/js/main.js" defer></script>
 </body>
 </html>
