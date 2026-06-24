@@ -126,7 +126,7 @@ section[id] { scroll-margin-top: 96px }
 .ed-sec--olive   { background: var(--olive);   color: #D8DCC9; --gl: rgba(255,255,255,.08) }
 
 /* ---- Navigation ---- */
-.site-nav { position: fixed; top: 0; left: 0; right: 0; z-index: 70; background: var(--cream); border-bottom: 1px solid rgba(35,39,30,.1) }
+.site-nav { position: fixed; top: 0; left: 0; right: 0; z-index: 300; background: var(--cream); border-bottom: 1px solid rgba(35,39,30,.1) }
 .site-nav__in { position: relative; max-width: var(--maxw); margin: 0 auto; padding: 15px 40px; display: flex; align-items: center; justify-content: space-between; gap: 24px; transition: padding .3s ease }
 .site-nav.is-floating .site-nav__in { padding-top: 8px; padding-bottom: 8px }
 .ed-brand { display: flex; align-items: baseline; gap: 11px }
@@ -208,10 +208,10 @@ section[id] { scroll-margin-top: 96px }
 .ed-photo--page    { height: 480px; object-position: 50% 22%; border-color: rgba(244,239,230,.35); box-shadow: 0 26px 54px -30px rgba(0,0,0,.5) }
 
 /* ---- Section body (inner padding) ---- */
-.ed-sec-body       { max-width: var(--maxw); margin: 0 auto; padding: 88px 40px }
-.ed-sec-body--sm   { max-width: var(--maxw); margin: 0 auto; padding: 56px 40px }
-.ed-sec-body--lg   { max-width: var(--maxw); margin: 0 auto; padding: 110px 40px }
-.ed-sec-body--narrow { max-width: 800px; margin: 0 auto; padding: 88px 40px }
+.ed-sec-body       { position: relative; z-index: 1; max-width: var(--maxw); margin: 0 auto; padding: 88px 40px }
+.ed-sec-body--sm   { position: relative; z-index: 1; max-width: var(--maxw); margin: 0 auto; padding: 56px 40px }
+.ed-sec-body--lg   { position: relative; z-index: 1; max-width: var(--maxw); margin: 0 auto; padding: 110px 40px }
+.ed-sec-body--narrow { position: relative; z-index: 1; max-width: 800px; margin: 0 auto; padding: 88px 40px }
 
 /* ---- Homepage centered block ---- */
 .ed-center { max-width: 760px; margin: 0 auto; padding: 96px 40px; text-align: center }
@@ -254,7 +254,7 @@ section[id] { scroll-margin-top: 96px }
 .ed-story p { font-size: clamp(16px,2.4vw,18px); line-height: 1.8; color: var(--olive) }
 .ed-story p + p { margin-top: 20px }
 .ed-story__h3 { font-family: 'Spectral', Georgia, serif; font-size: clamp(22px,3vw,28px); font-weight: 600; color: var(--olive); margin-bottom: 24px; line-height: 1.15 }
-.ed-sec--accent .ed-story p { color: #F1E4D7 }
+.ed-sec--accent .ed-story p { color: #F1E4D7; font-size: clamp(17px,2.5vw,19px); line-height: 1.95 }
 .ed-sec--accent .ed-story__h3 { color: #fff }
 
 /* ---- Phase / step grids (3-col) ---- */
@@ -354,6 +354,38 @@ section[id] { scroll-margin-top: 96px }
 .ed-cred-card { padding: 20px 24px; background: var(--cream2); border-left: 3px solid var(--accent) }
 .ed-cred-card p { font-size: 15px; line-height: 1.6; color: var(--ink) }
 
+/* ---- Pull quote (Sobre Ana) ---- */
+.ed-pullquote { font-family: 'Spectral', Georgia, serif; font-style: italic; font-size: clamp(22px,3.5vw,30px); line-height: 1.45; color: var(--accent); padding: 36px 0 44px; border-top: 1px solid var(--line); margin: 8px 0 36px; text-wrap: balance; max-width: 680px }
+
+/* ---- Story closing flourish (Sobre Ana accent section) ---- */
+.ed-story__closing { font-family: 'Spectral', Georgia, serif; font-style: italic; font-size: clamp(18px,2.6vw,22px); line-height: 1.45; color: #F2D8C5; margin-top: 32px; padding-top: 28px; border-top: 1px solid rgba(242,216,197,.25) }
+
+/* ---- Boundary note (quiet, near terracotta section) ---- */
+.ed-sobre-boundary { font-size: 13px; line-height: 1.8; color: rgba(242,216,197,.78); border-top: 1px solid rgba(242,216,197,.22); padding-top: 22px; font-style: italic }
+
+/* ---- Method timeline (Sobre Ana) ---- */
+.ed-timeline { list-style: none; margin-top: 48px }
+.ed-tl-item { display: grid; grid-template-columns: 52px 1fr; gap: 32px; padding: 36px 0; border-bottom: 1px solid var(--line) }
+.ed-tl-item:first-child { border-top: 1px solid var(--line) }
+.ed-tl-num { font-family: 'Spectral', Georgia, serif; font-size: 34px; font-weight: 600; color: var(--accent); line-height: 1; padding-top: 4px }
+.ed-tl-body { display: flex; flex-direction: column; gap: 10px; padding-top: 6px }
+.ed-tl-title { font-family: 'Spectral', Georgia, serif; font-size: 21px; font-weight: 600; color: var(--olive); line-height: 1.15 }
+.ed-tl-text { font-size: 15px; line-height: 1.72; color: var(--ink) }
+
+/* ---- Outline button (secondary, for programme link) ---- */
+.ed-btn--outline { color: var(--olive); border: 1px solid var(--line); background: transparent }
+.ed-btn--outline:hover { border-color: var(--accent); color: var(--accent) }
+
+/* ---- Credentials grouped layout (Sobre Ana) ---- */
+.ed-cred-groups { display: grid; grid-template-columns: 1fr 1fr; gap: 52px; margin-top: 40px }
+.ed-cred-group__title { font-size: 11px; font-weight: 800; letter-spacing: 2.5px; text-transform: uppercase; color: var(--accent); margin-bottom: 20px; padding-bottom: 14px; border-bottom: 1px solid var(--line) }
+.ed-cred-group__list { list-style: none }
+.ed-cred-group__item { font-size: 15px; line-height: 1.65; color: var(--ink); padding: 13px 0; border-bottom: 1px solid rgba(220,214,199,.5) }
+.ed-cred-group__item:last-child { border-bottom: none }
+
+/* ---- Closing divider (between Hoy and Invitación in accent section) ---- */
+.ed-sobre-divider { border-top: 1px solid rgba(242,216,197,.3); padding-top: 52px }
+
 /* ---- Homepage: contact rows ---- */
 .ed-contact-lead { font-family: 'Spectral', Georgia, serif; font-style: italic; font-size: clamp(17px,2.3vw,20px); line-height: 1.45; color: var(--accent) }
 .ed-contact-list { border-top: 1px solid var(--line) }
@@ -427,6 +459,9 @@ section[id] { scroll-margin-top: 96px }
   .ed-cards { grid-template-columns: 1fr }
   .ed-method-step { flex-direction: column; gap: 10px }
   .ed-method-kw { min-width: 0 }
+  .ed-tl-item { grid-template-columns: 44px 1fr; gap: 20px; padding: 28px 0 }
+  .ed-tl-num { font-size: 26px }
+  .ed-cred-groups { grid-template-columns: 1fr; gap: 36px }
 }
 
 @media (max-width: 768px) {
