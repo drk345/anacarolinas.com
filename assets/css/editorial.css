@@ -289,7 +289,7 @@ section[id] { scroll-margin-top: 96px }
 .ed-distinction p + p { margin-top: 12px }
 
 /* ---- Includes box ---- */
-.ed-includes { background: var(--cream); padding: 40px; border: 1px solid var(--line); margin-top: 32px }
+.ed-includes { background: var(--cream); padding: 40px; border-top: 2px solid var(--line); margin-top: 32px }
 .ed-includes__title { font-family: 'Spectral', Georgia, serif; font-size: 19px; font-weight: 600; color: var(--olive); margin-bottom: 24px }
 .ed-includes-note { font-size: 13px; color: var(--ink); opacity: .7; margin-top: 20px; font-style: italic }
 
@@ -566,8 +566,8 @@ section[id] { scroll-margin-top: 96px }
   object-position: 50% 15%;
 }
 
-/* ---- "Dos caminos" band (inside ed-sec--haze) — accent bridge, not dominant block ---- */
-.ed-programas-band { padding: 10px 24px 36px }
+/* ---- "Dos caminos" band (cream2 bg, Salvia top accent) — warm bridge, not campaign block ---- */
+.ed-programas-band { padding: 10px 24px 36px; border-top: 3px solid #B7C9CD }
 .ed-programas-band__h2 {
   font-family: 'Spectral', Georgia, serif;
   font-weight: 600;
@@ -575,14 +575,14 @@ section[id] { scroll-margin-top: 96px }
   line-height: 1.06;
   letter-spacing: 0.03em;
   text-align: center;
-  color: #23291C;
+  color: var(--ink);
   text-transform: uppercase;
   margin: 0;
 }
 .ed-programas-band__lead {
   font-size: 16px;
   line-height: 1.55;
-  color: #3D4F53;
+  color: rgba(35,39,30,.68);
   margin: 20px 0 0 40px;
   max-width: 42ch;
 }
@@ -622,7 +622,7 @@ section[id] { scroll-margin-top: 96px }
 .ed-programas-panel__scrim {
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(20,26,10,.18) 0%, rgba(20,26,10,.3) 45%, rgba(20,26,10,.62) 100%);
+  background: linear-gradient(180deg, rgba(20,26,10,.10) 0%, rgba(20,26,10,.22) 45%, rgba(20,26,10,.50) 100%);
   z-index: 1;
 }
 .ed-programas-panel__body { position: relative; z-index: 2; text-align: center }
