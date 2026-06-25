@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="utf-8">
@@ -10,15 +10,16 @@
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="preload" as="font" type="font/woff2" href="assets/fonts/mulish-400-normal-latin.woff2" crossorigin>
   <link rel="preload" as="font" type="font/woff2" href="assets/fonts/spectral-600-normal-latin.woff2" crossorigin>
+  <link rel="preload" as="font" type="font/woff2" href="assets/fonts/spectral-400-italic-latin.woff2" crossorigin>
   <link rel="stylesheet" href="assets/css/editorial.css?v=2">
 </head>
 <body>
 
   <!-- NAV -->
   <header class="site-nav">
-    <nav class="site-nav__in">
+    <nav class="site-nav__in" aria-label="Navegación principal">
       <a class="ed-brand" href="index.html"><span class="ed-brand__name">Ana Carolina</span></a>
-      <button id="navToggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="navLinks"><span></span><span></span><span></span></button>
+      <button type="button" id="navToggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="navLinks"><span></span><span></span><span></span></button>
       <div id="navLinks">
         <a class="ed-nl" href="index.html">Inicio</a>
         <a class="ed-nl" href="programas.html">Programas</a>
