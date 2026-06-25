@@ -514,8 +514,7 @@ section[id] { scroll-margin-top: 96px }
   background: #FFFFFF;
   display: grid;
   grid-template-columns: 1fr 1.04fr;
-  align-items: stretch;
-  overflow: hidden;
+  align-items: center;
   margin-top: 63px;
   border-top: 1px solid rgba(35,39,30,.1);
 }
@@ -552,22 +551,22 @@ section[id] { scroll-margin-top: 96px }
   margin-top: 40px;
 }
 .ed-programas-hero__media {
-  position: relative;
-  min-height: 620px;
-  overflow: hidden;
+  padding: 48px 44px 48px 12px;
+  display: flex;
+  align-items: center;
 }
-.ed-programas-hero__media picture { display: contents }
+.ed-programas-hero__media picture { display: block; width: 100% }
 .ed-programas-hero__media img {
-  position: absolute;
-  inset: 0;
   width: 100%;
-  height: 100%;
+  height: 580px;
   object-fit: cover;
   object-position: 50% 15%;
+  border: 1px solid var(--line);
+  box-shadow: 0 24px 52px -28px rgba(35,39,30,.40);
 }
 
 /* ---- "Dos caminos" band (cream2 bg, Salvia top accent) — warm bridge, not campaign block ---- */
-.ed-programas-band { padding: 10px 24px 36px; border-top: 3px solid #B7C9CD }
+.ed-programas-band { padding: 32px 24px 60px; border-top: 3px solid #B7C9CD }
 .ed-programas-band__h2 {
   font-family: 'Spectral', Georgia, serif;
   font-weight: 600;
@@ -734,10 +733,11 @@ section[id] { scroll-margin-top: 96px }
 /* ---- Programas responsive ---- */
 @media (max-width: 900px) {
   .ed-programas-hero { grid-template-columns: 1fr; margin-top: 61px }
-  .ed-programas-hero__copy { max-width: 100%; margin-left: 0; padding: 64px 24px 56px }
+  .ed-programas-hero__copy { max-width: 100%; margin-left: 0; padding: 64px 24px 48px }
   .ed-programas-hero__sub { max-width: 100% }
-  .ed-programas-hero__media { min-height: 480px }
-  .ed-programas-band { padding: 10px 20px 28px }
+  .ed-programas-hero__media { padding: 0 20px 48px }
+  .ed-programas-hero__media img { height: 440px }
+  .ed-programas-band { padding: 24px 20px 44px }
   .ed-programas-band__lead { margin: 16px 0 0 0 }
   .ed-programas-grid { grid-template-columns: 1fr }
   .ed-programas-panel { min-height: 500px }
@@ -748,8 +748,9 @@ section[id] { scroll-margin-top: 96px }
   .ed-programas-cierre__cta { justify-content: flex-start }
 }
 @media (max-width: 480px) {
-  .ed-programas-hero__copy { padding: 48px 20px 40px }
-  .ed-programas-hero__media { min-height: 380px }
+  .ed-programas-hero__copy { padding: 48px 20px 36px }
+  .ed-programas-hero__media { padding: 0 16px 36px }
+  .ed-programas-hero__media img { height: 360px }
   .ed-programas-panel { min-height: 440px; padding: 40px 32px }
   .ed-programas-hero__actions { flex-direction: column; align-items: stretch }
   .ed-programas-bridge__text { padding: 32px 20px 16px }
