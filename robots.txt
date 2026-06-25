@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://anacarolinas.com/sitemap.xml
+Sitemap: https://anacarolinas-com.pages.dev/sitemap.xml
