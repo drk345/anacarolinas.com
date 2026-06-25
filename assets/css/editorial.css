@@ -386,6 +386,15 @@ section[id] { scroll-margin-top: 96px }
 /* ---- Closing divider (between Hoy and Invitación in accent section) ---- */
 .ed-sobre-divider { border-top: 1px solid rgba(242,216,197,.3); padding-top: 52px }
 
+/* ---- Programas split cream hero ---- */
+.ed-prog-hero { border-bottom: 1px solid var(--line) }
+.ed-prog-hero__in { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; max-width: var(--maxw); margin: 0 auto; padding: 140px 40px 0; position: relative; z-index: 1 }
+.ed-prog-hero__copy { display: flex; flex-direction: column; gap: 28px; padding-bottom: 80px }
+.ed-prog-hero__title { font-family: 'Spectral', Georgia, serif; font-weight: 600; font-size: clamp(32px,5vw,58px); line-height: 1.06; letter-spacing: -.5px; color: var(--olive); text-transform: uppercase; text-wrap: balance }
+.ed-prog-hero__actions { display: flex; flex-wrap: wrap; gap: 14px }
+.ed-prog-hero__frame { width: 100%; align-self: flex-end }
+.ed-photo--prog { height: 640px; object-fit: cover; object-position: 50% 20%; border: 1px solid var(--line); box-shadow: 0 24px 50px -28px rgba(35,39,30,.45) }
+
 /* ---- Homepage: contact rows ---- */
 .ed-contact-lead { font-family: 'Spectral', Georgia, serif; font-style: italic; font-size: clamp(17px,2.3vw,20px); line-height: 1.45; color: var(--accent) }
 .ed-contact-list { border-top: 1px solid var(--line) }
@@ -462,10 +471,15 @@ section[id] { scroll-margin-top: 96px }
   .ed-tl-item { grid-template-columns: 44px 1fr; gap: 20px; padding: 28px 0 }
   .ed-tl-num { font-size: 26px }
   .ed-cred-groups { grid-template-columns: 1fr; gap: 36px }
+  .ed-prog-hero__in { grid-template-columns: 1fr; gap: 36px; padding-top: 106px }
+  .ed-prog-hero__copy { padding-bottom: 0 }
+  .ed-prog-hero__frame { order: -1 }
+  .ed-photo--prog { height: 480px }
 }
 
 @media (max-width: 768px) {
   .site-nav__in { padding-left: 24px; padding-right: 24px }
+  .ed-prog-hero__in { padding-left: 24px; padding-right: 24px }
   .ed-hero__in, .ed-2col, .ed-center, .ed-footer__in { padding-left: 24px; padding-right: 24px }
   .ed-pg-hero__in { padding-left: 24px; padding-right: 24px }
   .ed-sobre-hero__in { padding-left: 24px; padding-right: 24px }
@@ -486,6 +500,8 @@ section[id] { scroll-margin-top: 96px }
 @media (max-width: 480px) {
   .ed-hero__in, .ed-2col, .ed-center { padding-left: 20px; padding-right: 20px }
   .ed-hero__in { padding-top: 120px }
+  .ed-prog-hero__in { padding-left: 20px; padding-right: 20px }
+  .ed-photo--prog { height: 360px }
   .ed-pg-hero__in { padding-left: 20px; padding-right: 20px }
   .ed-sobre-hero__in { padding-left: 20px; padding-right: 20px }
   .ed-sec-body, .ed-sec-body--sm, .ed-sec-body--lg, .ed-sec-body--narrow { padding-left: 20px; padding-right: 20px }

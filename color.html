@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ALMAVIVA — Paleta de color</title>
+<style>
+  @font-face{font-family:'Mulish';font-style:normal;font-weight:400;font-display:swap;src:url('assets/fonts/mulish-400-normal-latin.woff2') format('woff2')}
+  @font-face{font-family:'Mulish';font-style:normal;font-weight:700;font-display:swap;src:url('assets/fonts/mulish-400-normal-latin.woff2') format('woff2')}
+  @font-face{font-family:'Spectral';font-style:normal;font-weight:600;font-display:swap;src:url('assets/fonts/spectral-600-normal-latin.woff2') format('woff2')}
+  @font-face{font-family:'Spectral';font-style:italic;font-weight:400;font-display:swap;src:url('assets/fonts/spectral-400-italic-latin.woff2') format('woff2')}
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0 }
+  body { background: #F7F3EB; font-family: 'Mulish', system-ui, sans-serif; color: #23271E; -webkit-font-smoothing: antialiased; padding: 60px 40px 100px }
+  .page { max-width: 980px; margin: 0 auto }
+
+  .section-label { font-size: 11px; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; color: #A8501F; margin-bottom: 14px }
+  .section-title { font-family: 'Spectral', Georgia, serif; font-size: 28px; font-weight: 600; color: #3A4429; margin-bottom: 6px; line-height: 1.1 }
+  .section-sub { font-size: 14px; color: #4E5A37; line-height: 1.6; margin-bottom: 36px; max-width: 560px }
+  hr.divider { border: none; border-top: 1px solid #DCD6C7; margin: 52px 0 }
+
+  /* ---- Current palette ---- */
+  .swatch-row { display: flex; gap: 0; border-radius: 6px; overflow: hidden; height: 64px; margin-bottom: 8px }
+  .swatch-labels { display: flex; margin-bottom: 40px }
+  .swatch-lbl { font-size: 10px; color: #4E5A37; text-align: center; line-height: 1.4 }
+  .swatch-hex { font-size: 10px; color: #888; font-family: monospace; text-align: center }
+
+  /* ---- Blue grid ---- */
+  .blue-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 40px }
+  .blue-card { border: 2px solid transparent; border-radius: 10px; overflow: hidden; cursor: pointer; background: #fff; border-color: #DCD6C7; transition: border-color .15s, box-shadow .15s }
+  .blue-card:hover { border-color: #A8501F; }
+  .blue-card.sel { border-color: #3A4429; box-shadow: 0 0 0 3px rgba(58,68,41,.12) }
+  .blue-swatch-block { height: 90px }
+  .blue-info { padding: 12px 14px 14px }
+  .blue-name { font-size: 13px; font-weight: 700; color: #23271E; margin-bottom: 3px }
+  .blue-hex-lbl { font-size: 11px; font-family: monospace; color: #888 }
+  .blue-desc { font-size: 12px; color: #4E5A37; margin-top: 6px; line-height: 1.5 }
+  .blue-tag { display: inline-block; margin-top: 8px; font-size: 10px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; padding: 3px 8px; border-radius: 3px; background: #EDE7DB; color: #4E5A37 }
+
+  /* ---- Combo preview ---- */
+  .combo-wrap { border-radius: 10px; overflow: hidden; border: 1px solid #DCD6C7}
+  .combo-strip { display: flex; height: 48px }
+  .combo-strip div { flex: 1 }
+  .combo-strip .strip-label { position: relative }
+
+  .combo-sections { display: grid; grid-template-columns: 1fr 1fr }
+  .combo-sec { padding: 30px 32px }
+  .combo-eyebrow { display: flex; align-items: center; gap: 10px; margin-bottom: 12px }
+  .combo-dash { width: 22px; height: 2px; background: #A8501F }
+  .combo-eytxt { font-size: 10px; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; color: #A8501F }
+  .combo-h { font-family: 'Spectral', Georgia, serif; font-size: 20px; font-weight: 600; line-height: 1.15; margin-bottom: 10px }
+  .combo-p { font-size: 13px; line-height: 1.65 }
+  .combo-btn { display: inline-flex; align-items: center; gap: 8px; margin-top: 16px; font-size: 11px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; padding: 9px 18px; border: 1.5px solid; cursor: pointer }
+
+  /* ---- Strip labels ---- */
+  .strip-row { display: flex; margin-top: 6px; margin-bottom: 36px }
+  .strip-row span { flex: 1; font-size: 10px; color: #888; text-align: center; font-family: monospace }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div style="margin-bottom: 52px">
+    <div class="section-label">Identidad visual · ALMAVIVA</div>
+    <h1 class="section-title">Paleta de color</h1>
+    <p class="section-sub">Tonos actuales de ALMAVIVA y propuestas de azul complementario. Haz clic en cada azul para ver cómo quedan juntos.</p>
+  </div>
+
+  <!-- CURRENT PALETTE -->
+  <div class="section-label">Paleta actual</div>
+  <div class="swatch-row" id="currentRow"></div>
+  <div class="swatch-labels" id="currentLabels"></div>
+
+  <hr class="divider">
+
+  <!-- BLUE OPTIONS -->
+  <div class="section-label" style="margin-bottom:6px">Azules propuestos</div>
+  <p class="section-sub">Tonos diseñados para complementar el cálido sistema cream-olivo-terracota. Ninguno compite con la terracota — todos ceden calidez.</p>
+  <div class="blue-grid" id="blueGrid"></div>
+
+  <!-- COMBO PREVIEW -->
+  <div class="section-label" style="margin-bottom: 14px">Vista en conjunto</div>
+  <div class="combo-wrap">
+    <div class="combo-strip" id="comboStrip"></div>
+    <div style="display:flex;gap:0;padding:6px 0 0;background:#fff;">
+      <span style="flex:1;font-size:9px;font-family:monospace;text-align:center;color:#bbb;">Cream</span>
+      <span style="flex:1;font-size:9px;font-family:monospace;text-align:center;color:#bbb;">Cream3</span>
+      <span style="flex:1;font-size:9px;font-family:monospace;text-align:center;color:#bbb;">Olive</span>
+      <span style="flex:1;font-size:9px;font-family:monospace;text-align:center;color:#bbb;">Terracota</span>
+      <span style="flex:1;font-size:9px;font-family:monospace;text-align:center;color:#bbb;" id="stripBlueLbl">—</span>
+    </div>
+    <div class="combo-sections">
+      <div class="combo-sec" style="background:#F4EFE6;border-right:1px solid #DCD6C7;">
+        <div class="combo-eyebrow"><span class="combo-dash"></span><span class="combo-eytxt">El método</span></div>
+        <p class="combo-h" style="color:#3A4429;">Encuentra el camino<br>que acompaña<br>tu momento</p>
+        <p class="combo-p" style="color:#4E5A37;">Cada programa está diseñado para un momento y un objetivo concreto.</p>
+        <div class="combo-btn" style="color:#A8501F;border-color:#A8501F;">Agendar conversación <span>→</span></div>
+      </div>
+      <div class="combo-sec" id="comboBlue">
+        <div class="combo-eyebrow"><span class="combo-dash"></span><span class="combo-eytxt">Dos caminos</span></div>
+        <p class="combo-h" id="comboBlueTxt">Foco · Intensivo</p>
+        <p class="combo-p" id="comboBlueP">Tú eliges desde dónde empezar.</p>
+        <div class="combo-btn" id="comboBluBtn">Conocer más <span>→</span></div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- FULL PALETTE TOGETHER -->
+  <div class="section-label" style="margin-bottom:14px">Los ocho colores juntos</div>
+  <div style="border-radius:10px;overflow:hidden;border:1px solid #DCD6C7;" id="fullRow"></div>
+
+</div>
+
+<script>
+  const current = [
+    { name: 'Cream', hex: '#F4EFE6', flex: 2.5 },
+    { name: 'Cream3', hex: '#EDE7DB', flex: 1.5 },
+    { name: 'Line', hex: '#DCD6C7', flex: 1 },
+    { name: 'Olive2', hex: '#4E5A37', flex: 1.8 },
+    { name: 'Olive', hex: '#3A4429', flex: 1.8 },
+    { name: 'Terracota', hex: '#A8501F', flex: 1.8 },
+    { name: 'Ink', hex: '#23271E', flex: 1 },
+  ];
+
+  const blues = [
+    { name: 'Salvia (elección Ana)', hex: '#B7C9CD', tag: 'original', desc: 'El tono que Ana eligió. Desaturado y cálido, convive sin tensión con la terracota.', textDark: '#23291C', textMid: '#3D4F53', btnColor: '#23291C' },
+    { name: 'Eau de nil', hex: '#9DBFC0', tag: 'cálido', desc: 'Más verde que azul. Evoca estética vintage francesa — funciona muy bien con Spectral.', textDark: '#1C2E2E', textMid: '#2E4848', btnColor: '#1C2E2E' },
+    { name: 'Polvo claro', hex: '#CCDDE1', tag: 'suave', desc: 'Casi neutro. Sustituye al cream en secciones alternadas sin romper la calidez.', textDark: '#23291C', textMid: '#3A4A52', btnColor: '#3A4A52' },
+    { name: 'Haze marino', hex: '#95A8AD', tag: 'versátil', desc: 'Mid-tone equilibrado. Funciona tanto de fondo como de color de texto secundario.', textDark: '#23291C', textMid: '#2C4044', btnColor: '#23291C' },
+    { name: 'Gris pizarra', hex: '#8499AF', tag: 'neutro', desc: 'Más hacia el azul. El contraste frío-cálido con la terracota es marcado y elegante.', textDark: '#F4EFE6', textMid: '#DCD6C7', btnColor: '#F4EFE6' },
+    { name: 'Teal profundo', hex: '#2C5058', tag: 'intenso', desc: 'Oscuro y contrastado. Sustituiría al olive como color estructural, no como fondo.', textDark: '#F4EFE6', textMid: '#C8DDE1', btnColor: '#C8DDE1' },
+  ];
+
+  // Build current palette row
+  const row = document.getElementById('currentRow');
+  const labels = document.getElementById('currentLabels');
+  current.forEach(c => {
+    const d = document.createElement('div');
+    d.style.cssText = `flex:${c.flex};background:${c.hex};`;
+    row.appendChild(d);
+    const l = document.createElement('div');
+    l.className = 'swatch-lbl';
+    l.style.cssText = `flex:${c.flex};`;
+    l.innerHTML = `${c.name}<br><span class="swatch-hex">${c.hex}</span>`;
+    labels.appendChild(l);
+  });
+
+  // Build blue grid
+  const grid = document.getElementById('blueGrid');
+  blues.forEach((b, i) => {
+    const card = document.createElement('div');
+    card.className = 'blue-card' + (i === 0 ? ' sel' : '');
+    card.innerHTML = `<div class="blue-swatch-block" style="background:${b.hex}"></div>
+      <div class="blue-info">
+        <div class="blue-name">${b.name}</div>
+        <div class="blue-hex-lbl">${b.hex}</div>
+        <div class="blue-desc">${b.desc}</div>
+        <span class="blue-tag">${b.tag}</span>
+      </div>`;
+    card.addEventListener('click', () => {
+      document.querySelectorAll('.blue-card').forEach(c => c.classList.remove('sel'));
+      card.classList.add('sel');
+      applyBlue(b);
+    });
+    grid.appendChild(card);
+  });
+
+  function applyBlue(b) {
+    // Strip
+    const strip = document.getElementById('comboStrip');
+    strip.innerHTML = '';
+    ['#F4EFE6','#EDE7DB','#3A4429','#A8501F', b.hex].forEach(c => {
+      const d = document.createElement('div');
+      d.style.background = c;
+      strip.appendChild(d);
+    });
+    document.getElementById('stripBlueLbl').textContent = b.hex;
+
+    // Combo section
+    const sec = document.getElementById('comboBlue');
+    sec.style.background = b.hex;
+    document.getElementById('comboBlueTxt').style.color = b.textDark;
+    document.getElementById('comboBlueP').style.color = b.textMid;
+    const btn = document.getElementById('comboBluBtn');
+    btn.style.color = b.btnColor;
+    btn.style.borderColor = b.btnColor;
+
+    // Full row
+    buildFullRow(b.hex, b.name);
+  }
+
+  function buildFullRow(blueHex, blueName) {
+    const fullRow = document.getElementById('fullRow');
+    fullRow.innerHTML = '';
+    const all = [...current, { name: blueName, hex: blueHex, flex: 1.8 }];
+    const swRow = document.createElement('div');
+    swRow.style.cssText = 'display:flex;height:60px;';
+    const lblRow = document.createElement('div');
+    lblRow.style.cssText = 'display:flex;padding:6px 0 10px;background:#fff;';
+    all.forEach(c => {
+      const d = document.createElement('div');
+      d.style.cssText = `flex:${c.flex || 1.8};background:${c.hex};`;
+      swRow.appendChild(d);
+      const l = document.createElement('div');
+      l.style.cssText = `flex:${c.flex || 1.8};font-size:9px;font-family:monospace;color:#bbb;text-align:center;`;
+      l.textContent = c.hex;
+      lblRow.appendChild(l);
+    });
+    fullRow.appendChild(swRow);
+    fullRow.appendChild(lblRow);
+  }
+
+  applyBlue(blues[0]);
+</script>
+</body>
+</html>
