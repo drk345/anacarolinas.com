@@ -566,7 +566,7 @@ section[id] { scroll-margin-top: 96px }
 }
 
 /* ---- "Dos caminos" band (cream2 bg, Salvia top accent) — warm bridge, not campaign block ---- */
-.ed-programas-band { padding: 32px 24px 60px; border-top: 3px solid #B7C9CD }
+.ed-programas-band { padding: 32px 24px 60px }
 .ed-programas-band__h2 {
   font-family: 'Spectral', Georgia, serif;
   font-weight: 600;
@@ -582,8 +582,9 @@ section[id] { scroll-margin-top: 96px }
   font-size: 16px;
   line-height: 1.55;
   color: rgba(35,39,30,.68);
-  margin: 20px 0 0 40px;
+  margin: 20px auto 0;
   max-width: 42ch;
+  text-align: center;
 }
 
 /* ---- Programme image panels grid (Foco + Intensivo) ---- */
