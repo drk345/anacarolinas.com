@@ -497,3 +497,186 @@ section[id] { scroll-margin-top: 96px }
   .ed-footer__in { padding-left: 20px; padding-right: 20px }
   .ed-check-2col { gap: 32px }
 }
+
+/* ============================================================
+   PROGRAMAS PAGE — editorial hero + image panels (AV-PROMPT-015)
+   ============================================================ */
+
+/* ---- Haze marino supporting section ---- */
+.ed-sec--haze { background: #95A8AD; color: #1C2D30 }
+
+/* ---- Dark outline button (white/light bg) ---- */
+.ed-btn--outline-dark { color: var(--olive); border: 1.5px solid var(--olive); background: transparent }
+.ed-btn--outline-dark:hover { background: rgba(58,68,41,.07) }
+
+/* ---- Programas editorial hero (white, 2-col, full-bleed image right) ---- */
+.ed-programas-hero {
+  background: #FFFFFF;
+  display: grid;
+  grid-template-columns: 1fr 1.08fr;
+  align-items: stretch;
+  overflow: hidden;
+}
+.ed-programas-hero__copy {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 136px 60px 96px 40px;
+  max-width: 680px;
+  margin-left: auto;
+  width: 100%;
+}
+.ed-programas-hero__title {
+  font-family: 'Spectral', Georgia, serif;
+  font-weight: 600;
+  font-size: clamp(32px, 5.2vw, 62px);
+  line-height: 1.12;
+  letter-spacing: 0.03em;
+  color: var(--olive);
+  text-transform: uppercase;
+}
+.ed-programas-hero__sub {
+  font-size: clamp(15px, 1.8vw, 18px);
+  line-height: 1.72;
+  color: var(--ink);
+  margin-top: 28px;
+  max-width: 440px;
+}
+.ed-programas-hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 44px;
+}
+.ed-programas-hero__media {
+  position: relative;
+  min-height: 660px;
+  overflow: hidden;
+}
+.ed-programas-hero__media picture { display: contents }
+.ed-programas-hero__media img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 28%;
+}
+
+/* ---- Intro band (inside ed-sec--haze) ---- */
+.ed-programas-band {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 80px 40px 88px;
+  display: grid;
+  grid-template-columns: 1.1fr .9fr;
+  gap: 80px;
+  align-items: start;
+  position: relative;
+  z-index: 1;
+}
+.ed-programas-band__h2 {
+  font-family: 'Spectral', Georgia, serif;
+  font-weight: 600;
+  font-size: clamp(28px, 4.6vw, 52px);
+  line-height: 1.08;
+  color: #FFFFFF;
+  margin: 0;
+}
+.ed-programas-band__lead {
+  font-family: 'Spectral', Georgia, serif;
+  font-style: italic;
+  font-size: clamp(17px, 2.1vw, 21px);
+  line-height: 1.52;
+  color: rgba(255,255,255,.88);
+  padding-top: 6px;
+}
+
+/* ---- Programme image panels grid ---- */
+.ed-programas-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3px;
+  background: var(--cream3);
+}
+.ed-programas-panel {
+  position: relative;
+  min-height: 560px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 48px 44px;
+  overflow: hidden;
+  text-decoration: none;
+  color: #fff;
+}
+.ed-programas-panel picture { display: contents }
+.ed-programas-panel__bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 30%;
+  z-index: 0;
+  transition: transform .6s ease;
+}
+.ed-programas-panel:hover .ed-programas-panel__bg { transform: scale(1.04) }
+.ed-programas-panel__scrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(20,26,10,.04) 0%, rgba(20,26,10,.2) 38%, rgba(20,26,10,.72) 100%);
+  z-index: 1;
+}
+.ed-programas-panel__body { position: relative; z-index: 2 }
+.ed-programas-panel__meta {
+  font-family: 'Spectral', Georgia, serif;
+  font-style: italic;
+  font-size: 15px;
+  line-height: 1.4;
+  color: rgba(255,255,255,.82);
+  margin-bottom: 10px;
+}
+.ed-programas-panel__title {
+  font-family: 'Spectral', Georgia, serif;
+  font-weight: 600;
+  font-size: clamp(20px, 2.6vw, 28px);
+  line-height: 1.1;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  margin-bottom: 22px;
+  color: #fff;
+}
+.ed-programas-panel__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #FBF6EC;
+  border: 1px solid rgba(251,246,236,.72);
+  padding: 12px 24px;
+  transition: background .25s ease, border-color .25s ease;
+}
+.ed-programas-panel:hover .ed-programas-panel__cta {
+  background: rgba(251,246,236,.15);
+  border-color: rgba(251,246,236,.95);
+}
+
+/* ---- Programas responsive ---- */
+@media (max-width: 900px) {
+  .ed-programas-hero { grid-template-columns: 1fr }
+  .ed-programas-hero__copy { max-width: 100%; margin-left: 0; padding: 110px 24px 56px }
+  .ed-programas-hero__media { min-height: 480px }
+  .ed-programas-band { grid-template-columns: 1fr; gap: 20px; padding: 64px 24px 72px }
+  .ed-programas-grid { grid-template-columns: 1fr }
+  .ed-programas-panel { min-height: 480px }
+}
+@media (max-width: 480px) {
+  .ed-programas-hero__copy { padding: 104px 20px 48px }
+  .ed-programas-hero__media { min-height: 380px }
+  .ed-programas-panel { min-height: 420px; padding: 36px 28px }
+  .ed-programas-hero__actions { flex-direction: column; align-items: stretch }
+}
