@@ -14,6 +14,8 @@ cp ./*.html dist/
 # Public assets
 if [ -d assets ]; then
   cp -R assets dist/assets
+  # Remove unused/development CSS files that are not linked by any page
+  rm -f dist/assets/css/home.css dist/assets/css/prototype.css dist/assets/css/styles.css
 fi
 
 # Optional Cloudflare / static root files, if present
