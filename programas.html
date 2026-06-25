@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="utf-8">
@@ -25,7 +25,7 @@
   <link rel="preload" as="font" type="font/woff2" href="assets/fonts/mulish-400-normal-latin.woff2" crossorigin>
   <link rel="preload" as="font" type="font/woff2" href="assets/fonts/spectral-600-normal-latin.woff2" crossorigin>
   <link rel="preload" as="font" type="font/woff2" href="assets/fonts/spectral-400-italic-latin.woff2" crossorigin>
-  <link rel="stylesheet" href="assets/css/editorial.css?v=2">
+  <link rel="stylesheet" href="assets/css/editorial.css?v=3">
 </head>
 <body>
 
@@ -44,53 +44,90 @@
     </nav>
   </header>
 
-  <!-- HERO -->
-  <section class="ed-pg-hero ed-sec--accent ed-tex">
-    <div class="ed-pg-hero__in">
-      <div class="ed-eyebrow ed-eyebrow--light"><span class="ed-eyebrow__dash"></span><span class="ed-eyebrow__txt">El Método ALMAVIVA</span></div>
-      <h1 class="ed-pg-hero__title">Programas<br>ALMAVIVA</h1>
-      <p class="ed-pg-hero__lead">Cuatro caminos para un mismo método. Cada uno diseñado para un momento y un objetivo concreto.</p>
-      <div class="ed-pg-hero__actions">
-        <a class="ed-btn ed-btn--cream" href="contacto.html">Agendar conversación inicial <span class="ed-btn__arrow">→</span></a>
+  <!-- HERO: editorial 2-col, white, image right -->
+  <section class="ed-programas-hero">
+    <div class="ed-programas-hero__copy">
+      <h1 class="ed-programas-hero__title">Encuentra<br>el camino<br>que acompaña<br>tu momento</h1>
+      <p class="ed-programas-hero__sub">Cada programa ALMAVIVA acompaña una necesidad distinta: claridad, regulación emocional, autoconocimiento o un proceso más profundo de práctica.</p>
+      <div class="ed-programas-hero__actions">
+        <a class="ed-btn ed-btn--accent" href="contacto.html">Agendar conversación inicial <span class="ed-btn__arrow">→</span></a>
+        <a class="ed-btn ed-btn--outline-dark" href="#programas">Explorar programas <span class="ed-btn__arrow">↓</span></a>
       </div>
+    </div>
+    <div class="ed-programas-hero__media">
+      <picture>
+        <source type="image/webp" srcset="assets/img/programas-hero-800.webp 800w, assets/img/programas-hero-1200.webp 1200w" sizes="(max-width:900px) 100vw, 54vw">
+        <img src="assets/img/programas-hero-1200.jpg" srcset="assets/img/programas-hero-800.jpg 800w, assets/img/programas-hero-1200.jpg 1200w" sizes="(max-width:900px) 100vw, 54vw" width="1200" height="1600" loading="eager" fetchpriority="high" decoding="async" alt="Ana Carolina Segura junto al mar">
+      </picture>
     </div>
   </section>
 
-  <!-- LOS CUATRO PROGRAMAS -->
-  <section class="ed-sec--cream2 ed-tex">
-    <div class="ed-sec-body">
-      <div class="ed-eyebrow"><span class="ed-eyebrow__dash"></span><span class="ed-eyebrow__txt">Los cuatro caminos</span></div>
-      <h2 class="ed-h2">Un mismo método.<br>Cuatro formas de recorrerlo.</h2>
-      <div class="ed-cards">
-        <a class="ed-card" href="sesiones-individuales.html">
-          <span class="ed-card__tag">Claridad flexible</span>
-          <div class="ed-card__title">Sesiones Individuales</div>
-          <p class="ed-card__body">Un espacio para detenerte, mirarte y ganar claridad, sin comprometerte a un proceso estructurado.</p>
-          <span class="ed-card__arrow">→</span>
-        </a>
-        <a class="ed-card" href="conecta.html">
-          <span class="ed-card__tag">Bases en comunidad</span>
-          <div class="ed-card__title">ALMAVIVA Conecta</div>
-          <p class="ed-card__body">Entiende cómo funciona tu cerebro y empieza a observar tus patrones, en grupo.</p>
-          <span class="ed-card__arrow">→</span>
-        </a>
-        <a class="ed-card" href="foco.html">
-          <span class="ed-card__tag">Un patrón concreto</span>
-          <div class="ed-card__title">ALMAVIVA Foco</div>
-          <p class="ed-card__body">Saber no es lo mismo que cambiar. Foco trabaja un patrón concreto con estructura y continuidad.</p>
-          <span class="ed-card__arrow">→</span>
-        </a>
-        <a class="ed-card" href="intensivo.html">
-          <span class="ed-card__tag">El proceso completo</span>
-          <div class="ed-card__title">ALMAVIVA Intensivo</div>
-          <p class="ed-card__body">Del piloto automático a la respuesta consciente. Un recorrido por los cinco pilares del método.</p>
-          <span class="ed-card__arrow">→</span>
-        </a>
-      </div>
+  <!-- INTRO BAND (haze marino) -->
+  <section class="ed-sec--haze" id="programas">
+    <div class="ed-programas-band">
+      <h2 class="ed-programas-band__h2">Cuatro caminos para un mismo método</h2>
+      <p class="ed-programas-band__lead">Cada uno diseñado para un momento y un objetivo concreto. Tú eliges desde dónde empiezas.</p>
     </div>
   </section>
 
-  <!-- ¿POR DÓNDE EMPEZAR? -->
+  <!-- PROGRAMME PANELS: 2×2 image grid -->
+  <section class="ed-programas-grid" aria-label="Los cuatro programas ALMAVIVA">
+
+    <a class="ed-programas-panel" href="sesiones-individuales.html">
+      <picture>
+        <source type="image/webp" srcset="assets/img/programas-sesiones-800.webp 800w, assets/img/programas-sesiones-1200.webp 1200w" sizes="(max-width:900px) 100vw, 50vw">
+        <img class="ed-programas-panel__bg" src="assets/img/programas-sesiones-1200.jpg" srcset="assets/img/programas-sesiones-800.jpg 800w, assets/img/programas-sesiones-1200.jpg 1200w" sizes="(max-width:900px) 100vw, 50vw" width="1200" height="1600" loading="lazy" decoding="async" alt="Sesiones individuales ALMAVIVA — un espacio de pausa y claridad">
+      </picture>
+      <div class="ed-programas-panel__scrim"></div>
+      <div class="ed-programas-panel__body">
+        <p class="ed-programas-panel__meta">Acompañamiento individual · Flexible · 100% online</p>
+        <h3 class="ed-programas-panel__title">Sesiones<br>Individuales<br>ALMAVIVA</h3>
+        <span class="ed-programas-panel__cta">Conocer sesiones →</span>
+      </div>
+    </a>
+
+    <a class="ed-programas-panel" href="conecta.html">
+      <picture>
+        <source type="image/webp" srcset="assets/img/home-cursos-800.webp 800w, assets/img/home-cursos-1200.webp 1200w" sizes="(max-width:900px) 100vw, 50vw">
+        <img class="ed-programas-panel__bg" src="assets/img/home-cursos-1200.jpg" srcset="assets/img/home-cursos-800.jpg 800w, assets/img/home-cursos-1200.jpg 1200w" sizes="(max-width:900px) 100vw, 50vw" width="1200" height="1500" loading="lazy" decoding="async" alt="ALMAVIVA Conecta — neuroeducación en comunidad">
+      </picture>
+      <div class="ed-programas-panel__scrim"></div>
+      <div class="ed-programas-panel__body">
+        <p class="ed-programas-panel__meta">Neuroeducación grupal · ~6 semanas · 100% online</p>
+        <h3 class="ed-programas-panel__title">Programa<br>ALMAVIVA<br>Conecta</h3>
+        <span class="ed-programas-panel__cta">Conocer Conecta →</span>
+      </div>
+    </a>
+
+    <a class="ed-programas-panel" href="foco.html">
+      <picture>
+        <source type="image/webp" srcset="assets/img/programas-foco-800.webp 800w, assets/img/programas-foco-1200.webp 1200w" sizes="(max-width:900px) 100vw, 50vw">
+        <img class="ed-programas-panel__bg" src="assets/img/programas-foco-1200.jpg" srcset="assets/img/programas-foco-800.jpg 800w, assets/img/programas-foco-1200.jpg 1200w" sizes="(max-width:900px) 100vw, 50vw" width="1200" height="1600" loading="lazy" decoding="async" alt="ALMAVIVA Foco — trabaja un patrón concreto">
+      </picture>
+      <div class="ed-programas-panel__scrim"></div>
+      <div class="ed-programas-panel__body">
+        <p class="ed-programas-panel__meta">Acompañamiento individual · Un patrón concreto · 100% online</p>
+        <h3 class="ed-programas-panel__title">Programa<br>ALMAVIVA<br>Foco</h3>
+        <span class="ed-programas-panel__cta">Conocer Foco →</span>
+      </div>
+    </a>
+
+    <a class="ed-programas-panel" href="intensivo.html">
+      <picture>
+        <source type="image/webp" srcset="assets/img/programas-intensivo-800.webp 800w, assets/img/programas-intensivo-1200.webp 1200w" sizes="(max-width:900px) 100vw, 50vw">
+        <img class="ed-programas-panel__bg" src="assets/img/programas-intensivo-1200.jpg" srcset="assets/img/programas-intensivo-800.jpg 800w, assets/img/programas-intensivo-1200.jpg 1200w" sizes="(max-width:900px) 100vw, 50vw" width="1200" height="1600" loading="lazy" decoding="async" alt="ALMAVIVA Intensivo — el proceso completo, los cinco pilares">
+      </picture>
+      <div class="ed-programas-panel__scrim"></div>
+      <div class="ed-programas-panel__body">
+        <p class="ed-programas-panel__meta">El proceso completo · Los cinco pilares · 100% online</p>
+        <h3 class="ed-programas-panel__title">Programa<br>ALMAVIVA<br>Intensivo</h3>
+        <span class="ed-programas-panel__cta">Conocer Intensivo →</span>
+      </div>
+    </a>
+
+  </section>
+
+  <!-- DECISION HELPER -->
   <section class="ed-sec--cream ed-tex">
     <div class="ed-sec-body">
       <div class="ed-eyebrow"><span class="ed-eyebrow__dash"></span><span class="ed-eyebrow__txt">¿Por dónde empezar?</span></div>
