@@ -537,11 +537,19 @@ section[id] { scroll-margin-top: 96px }
   color: var(--olive);
   text-transform: uppercase;
 }
+.ed-programas-hero__sub {
+  font-size: 17px;
+  line-height: 1.65;
+  color: var(--ink);
+  opacity: 0.75;
+  margin-top: 22px;
+  max-width: 38ch;
+}
 .ed-programas-hero__actions {
   display: flex;
   flex-wrap: wrap;
   gap: 14px;
-  margin-top: 54px;
+  margin-top: 40px;
 }
 .ed-programas-hero__media {
   position: relative;
@@ -558,13 +566,13 @@ section[id] { scroll-margin-top: 96px }
   object-position: 50% 15%;
 }
 
-/* ---- "Dos caminos" band (inside ed-sec--haze) ---- */
-.ed-programas-band { padding: 18px 24px 72px }
+/* ---- "Dos caminos" band (inside ed-sec--haze) — accent bridge, not dominant block ---- */
+.ed-programas-band { padding: 10px 24px 36px }
 .ed-programas-band__h2 {
   font-family: 'Spectral', Georgia, serif;
   font-weight: 600;
-  font-size: clamp(24px, 4.8vw, 72px);
-  line-height: 1.04;
+  font-size: clamp(20px, 3.6vw, 52px);
+  line-height: 1.06;
   letter-spacing: 0.03em;
   text-align: center;
   color: #23291C;
@@ -572,10 +580,10 @@ section[id] { scroll-margin-top: 96px }
   margin: 0;
 }
 .ed-programas-band__lead {
-  font-size: 18px;
+  font-size: 16px;
   line-height: 1.55;
   color: #3D4F53;
-  margin: 80px 0 0 40px;
+  margin: 20px 0 0 40px;
   max-width: 42ch;
 }
 
@@ -654,8 +662,40 @@ section[id] { scroll-margin-top: 96px }
   background: rgba(251,246,236,.15);
   border-color: rgba(251,246,236,.95);
 }
+.ed-programas-panel__desc {
+  font-size: 14px;
+  line-height: 1.58;
+  color: rgba(255,255,255,.82);
+  max-width: 22ch;
+  margin: 0 0 20px;
+  letter-spacing: 0.01em;
+}
 
-/* ---- Editorial closing section ---- */
+/* ---- Distinction bridge ---- */
+.ed-programas-bridge { background: var(--cream2) }
+.ed-programas-bridge__text {
+  font-family: 'Spectral', Georgia, serif;
+  font-style: italic;
+  font-size: clamp(16px, 2vw, 20px);
+  line-height: 1.65;
+  color: var(--olive2);
+  text-align: center;
+  max-width: 52ch;
+  margin: 0 auto;
+  padding: 52px 40px 24px;
+}
+.ed-programas-bridge__note {
+  font-size: 14px;
+  line-height: 1.62;
+  color: rgba(35,39,30,.55);
+  text-align: center;
+  max-width: 52ch;
+  margin: 0 auto;
+  padding: 0 40px 44px;
+}
+.ed-programas-bridge__note a { color: var(--accent) }
+
+/* ---- Editorial closing section (retained for rollback; not in current HTML) ---- */
 .ed-programas-cierre { background: #FFFFFF }
 .ed-programas-cierre__in {
   max-width: var(--maxw);
@@ -695,11 +735,14 @@ section[id] { scroll-margin-top: 96px }
 @media (max-width: 900px) {
   .ed-programas-hero { grid-template-columns: 1fr; margin-top: 61px }
   .ed-programas-hero__copy { max-width: 100%; margin-left: 0; padding: 64px 24px 56px }
+  .ed-programas-hero__sub { max-width: 100% }
   .ed-programas-hero__media { min-height: 480px }
-  .ed-programas-band { padding: 16px 20px 56px }
-  .ed-programas-band__lead { margin: 40px 0 0 0 }
+  .ed-programas-band { padding: 10px 20px 28px }
+  .ed-programas-band__lead { margin: 16px 0 0 0 }
   .ed-programas-grid { grid-template-columns: 1fr }
   .ed-programas-panel { min-height: 500px }
+  .ed-programas-bridge__text { padding: 40px 24px 20px }
+  .ed-programas-bridge__note { padding: 0 24px 36px }
   .ed-programas-cierre__in { grid-template-columns: 1fr; gap: 32px; padding: 72px 24px }
   .ed-programas-cierre__img { width: 160px; height: 200px }
   .ed-programas-cierre__cta { justify-content: flex-start }
@@ -709,5 +752,7 @@ section[id] { scroll-margin-top: 96px }
   .ed-programas-hero__media { min-height: 380px }
   .ed-programas-panel { min-height: 440px; padding: 40px 32px }
   .ed-programas-hero__actions { flex-direction: column; align-items: stretch }
+  .ed-programas-bridge__text { padding: 32px 20px 16px }
+  .ed-programas-bridge__note { padding: 0 20px 32px }
   .ed-programas-cierre__in { padding: 56px 20px }
 }
