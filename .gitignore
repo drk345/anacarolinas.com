@@ -6,6 +6,10 @@ tools/node_modules/
 tools/source-bundle.html
 tools/*.generated.css
 tools/img-meta.json
+tools/preview-programas/
+
+# Session working backups (git history is the real rollback)
+backups/
 
 # OS / editor cruft
 .DS_Store

@@ -3,6 +3,16 @@
 Status: FROZEN after AV-PROMPT-016 harmonization · 25 June 2026
 Do not change without explicit Ana sign-off.
 
+> **⚠ SUPERSEDED AS DEFAULT SOURCE OF TRUTH — 2026-07-02.**
+> This file is kept for historical reference only. The canonical, current reference is now
+> [`docs/reference/ALMAVIVA-MASTER-REFERENCE.md`](../reference/ALMAVIVA-MASTER-REFERENCE.md).
+> In particular, **Section 5 below ("Programas page — frozen state") is outdated**: the
+> "2 programs only" rule and the "Ana must decide" framing on Conecta have been resolved —
+> the confirmed offer structure is 3 co-equal programs (Conecta, Foco, Intensivo). See
+> Section 5 of the master reference for the current, correct structure. All other sections
+> of this file (colors, typography, CTA system, page rhythm, image treatment, CSP, forbidden
+> terms) remain accurate and were carried forward into the master reference unchanged.
+
 ---
 
 ## 1. Color system
@@ -75,6 +85,13 @@ Use this for all conversion-intent links to `contacto.html`.
 ---
 
 ## 5. Programas page — frozen state
+
+> **⚠ OUTDATED — superseded 2026-07-02.** This entire section describes a 2-program state
+> that is no longer current. The confirmed offer structure is 3 co-equal programs: ALMAVIVA
+> Conecta, ALMAVIVA Foco, ALMAVIVA Intensivo. The "offer architecture note" below is resolved
+> — Conecta is now a main program, not an open decision. Kept below verbatim for historical
+> record of the 25-June-2026 state; see `docs/reference/ALMAVIVA-MASTER-REFERENCE.md` §5 for
+> the current, correct structure.
 
 **What is on the page:**
 - 2-col hero (white bg, Spectral H1, sub sentence, "Agendar conversación inicial" CTA)
