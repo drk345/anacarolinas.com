@@ -1,20 +1,24 @@
-# ALMAVIVA Production Conversion Master Standard
+# ALMAVIVA Production Conversion Master Standard — v1.1
 
-*Site-wide conversion standard — Foco is only the pilot.*
+*Site-wide conversion standard — Foco proved the method, the rest of the site must follow.*
 
 This is the named, site-wide standard every Claude Design bundled-export page must
 follow when converted to production. It was established and proven on the
-`foco.html` pilot (committed on top of checkpoint `9e62a7c`, forensic verification:
-PASS — 32/32 geometry metrics identical across 1920/1366/390/375, visible-text
-SHA-identical, no-JS render hash-identical).
+`foco.html` pilot (checkpoint `9e62a7c`, pilot committed as `110c9d4`, forensic
+verification: PASS — 32/32 geometry metrics identical across 1920/1366/390/375,
+visible-text SHA-identical, no-JS render hash-identical).
 
-## Applies to
+## Conversion order and approval gates
 
-- `foco.html` (pilot — done)
-- `intensivo.html`
-- `sesiones-individuales.html`
-- `sobre-ana.html`
-- `contacto.html` / final shell consistency where relevant
+Work page by page; stop at every approval gate; commit only after approval.
+Never start a page before the previous one is verified, approved, and committed.
+
+1. `foco.html` — pilot, **committed (110c9d4)**
+2. `intensivo.html` — next; also the header-CSS consolidation step
+3. `sesiones-individuales.html`
+4. `sobre-ana.html` — high-risk (large embedded biography photos as CSS backgrounds)
+5. `contacto.html` + global shell/header/footer consistency pass
+6. Final site-wide QA (all public pages)
 
 ## The standard (summary)
 

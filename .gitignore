@@ -11,6 +11,9 @@ tools/preview-programas/
 # Session working backups (git history is the real rollback)
 backups/
 
+# Generated verification artifacts (screenshots, no-JS render copies) — not production source
+docs/verification/
+
 # OS / editor cruft
 .DS_Store
 Thumbs.db
