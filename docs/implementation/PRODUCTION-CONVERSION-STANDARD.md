@@ -1,4 +1,4 @@
-# ALMAVIVA Production Conversion Master Standard — v1.1
+# ALMAVIVA Production Conversion Master Standard — v1.2
 
 *Site-wide conversion standard — Foco proved the method, the rest of the site must follow.*
 
@@ -14,8 +14,8 @@ Work page by page; stop at every approval gate; commit only after approval.
 Never start a page before the previous one is verified, approved, and committed.
 
 1. `foco.html` — pilot, **committed (110c9d4)**
-2. `intensivo.html` — next; also the header-CSS consolidation step
-3. `sesiones-individuales.html`
+2. `intensivo.html` — **committed (57c78bc)**; introduced the shared `site-shell.css` header
+3. `sesiones-individuales.html` — **committed (84d3b54)**; source of the v1.2 lessons below
 4. `sobre-ana.html` — high-risk (large embedded biography photos as CSS backgrounds)
 5. `contacto.html` + global shell/header/footer consistency pass
 6. Final site-wide QA (all public pages)
@@ -27,28 +27,60 @@ Never start a page before the previous one is verified, approved, and committed.
    screenshots alone.
 2. Remove 100% of the Claude Design runtime: bundler wrapper/manifest/template,
    unpacking scripts, React/CDN fetches, base64 blobs, Google Fonts references.
-3. Clean semantic HTML5: `lang="es"`, one `h1`, `<main>`/`<footer>` landmarks,
+3. **Runtime side-effect review (v1.2):** before discarding bundled runtime/component
+   code, inspect it for rendered side effects beyond simple bindings. Look for
+   injected DOM, decorative ornaments, event-state defaults, image sizing logic,
+   conditionals, or layout-affecting scripts. If runtime output exists, reproduce
+   the resolved end-state statically and verify it against the live baseline.
+4. Clean semantic HTML5: `lang="es"`, one `h1`, `<main>`/`<footer>` landmarks,
    accessible nav (`aria-expanded` hamburger), real `<img>` with alt + dimensions.
-4. Self-hosted assets only: fonts byte-deduped against `assets/fonts/`, images
+5. Self-hosted assets only: fonts byte-deduped against `assets/fonts/`, images
    extracted to `assets/img/<page>/`, shared `assets/js/main.js` for the nav.
-5. Page CSS extracted verbatim into `assets/css/<page>.css` (export class names are
+6. Page CSS extracted verbatim into `assets/css/<page>.css` (export class names are
    generic — do not merge into `editorial.css` without a collision audit); only
-   provably-dead rules may be removed, each asserted unreferenced first.
-6. Full SEO head per page: title, meta description, canonical, OG/Twitter set.
-7. Link integrity: zero `href="#"`, zero `href="programas.html"`, zero `<a>` without
+   provably-dead rules may be removed, each asserted unreferenced first. The shared
+   `.ed-gnav` header comes from `assets/css/site-shell.css` (do not fork it).
+7. Full SEO head per page: title, meta description, canonical, OG/Twitter set.
+8. Link integrity: zero `href="#"`, zero `href="programas.html"`, zero `<a>` without
    href; all fragment targets verified to exist.
-8. Verification gates before commit: content parity (normalized visible-text hash),
-   geometry comparison, console/network clean, adversarial multi-lens review.
+9. Verification gates before commit: content parity (normalized visible-text hash),
+   geometry comparison, **full-page pixel-diff (v1.2)**, console/network clean,
+   adversarial multi-lens review.
+10. **Full-page pixel-diff gate (v1.2):** add full-page screenshot pixel-diffing after
+    geometry checks. Geometry parity is required but not sufficient. Pixel-diffing
+    should be used to detect subtle differences in font weight, missing decorative
+    elements, image resampling, or render-only changes that do not affect element
+    rectangles. Any non-zero diff must be localized and explained. (Viewport-height
+    screenshots are not enough — below-the-fold regions must be covered.)
 
-## Process (proven on the pilot)
+## Process (proven on the pilot, hardened on Sesiones)
 
-backup → 4-viewport baseline measurement → payload extraction → assertion-guarded
-rebuild → geometry comparison → content-parity hash → adversarial review → forensic
+backup → 4-viewport baseline measurement → payload extraction → **runtime
+side-effect review** → assertion-guarded rebuild → geometry comparison →
+content-parity hash → **full-page pixel-diff** → adversarial review → forensic
 evidence (screenshots under `docs/verification/<page>-phase-2b/`) → commit per page.
+
+## Conversion lessons (version history)
+
+- **v1.2 (from Sesiones Individuales, commit 84d3b54):** Sesiones Individuales proved
+  why these gates are necessary: runtime-injected thread ornaments (the DCLogic
+  `addThread()` side effect) were invisible to DOM geometry checks — absolutely
+  positioned, thin, and translucent — and a Lato 300 vs 400 font mismatch was found
+  only through full-page pixel-diffing. Both were fixed and verified pixel-identical
+  before commit.
+- **v1.1 (from Intensivo, commit 57c78bc):** shared header CSS belongs in
+  `site-shell.css`; runtime accordions/bindings (`sc-if`, moustache, DCLogic state)
+  must be resolved to their live-verified end-state, with interactive behavior ported
+  to minimal vanilla JS only where the baseline had it.
+- **v1.0 (from the Foco pilot, commit 110c9d4):** the base recipe — extraction,
+  assertion-guarded rebuild, geometry/parity/no-JS gates, adversarial review.
 
 ## Standing follow-ups
 
-- On the second conversion (Intensivo): hoist the duplicated `.ed-gnav` header CSS
-  block into a shared stylesheet so copies decrease as pages convert.
-- `sobre-ana.html` converts last: 5 photos are CSS backgrounds needing extraction
-  and an explicit treatment decision (background vs `<img>`/alt).
+- `sobre-ana.html` converts last among the program/about pages: 5 photos are CSS
+  backgrounds needing extraction and an explicit treatment decision (background vs
+  `<img>`/alt); audit its runtime for side effects per the v1.2 rule before removal.
+- `foco.css` still carries its own copy of the `.ed-gnav` block (pre-site-shell);
+  migrate it to `site-shell.css` in a future approved shell-consistency pass.
+- Dead-CSS pruning of the verbatim page stylesheets (journey/unused-section rules on
+  Sesiones, ~30% of that file) is deferred to a future approved cleanup pass.
