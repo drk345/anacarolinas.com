@@ -273,3 +273,16 @@ html,body{margin:0}
 .cell,.stat{border-radius:6px}
 .grid6{grid-template-columns:1fr}
 }
+
+/* --------------------------------------------------------------------------
+   Phase 2C alignment layer (owner-approved): align Intensivo's outer rhythm
+   to Inicio (1056px content column, 32px desktop gutter, 22px mobile gutter).
+   Internal caps (.panel, .head, .guide, .faq, .pricebox, .conv-in, text
+   leads, etc.) are intentionally untouched. Baseline rules above remain
+   verbatim; this layer only retargets the outer shell.
+   -------------------------------------------------------------------------- */
+.inner{max-width:var(--shell-content-max,1056px)}
+.hero-grid{max-width:var(--shell-content-max,1056px)}
+.sec{padding-left:var(--shell-pad,32px);padding-right:var(--shell-pad,32px)}
+/* .weeks (direct .sec child, 1060px) exceeded the new 1056px shell by 4px; cap to rhythm */
+.weeks{max-width:var(--shell-content-max,1056px)}

@@ -4,6 +4,21 @@
    in each page stylesheet. (foco.css still carries its own approved copy;
    migrate it here in a future approved pass.)
    ========================================================================== */
+/* --------------------------------------------------------------------------
+   Global rhythm tokens (Phase 2C) - Inicio/index.html is the source of truth.
+   Shell box 1120px with 32px side padding (22px on mobile) => 1056px content
+   column on desktop. Pages opt in by referencing these variables in their own
+   alignment layers; pages that do not reference them are unaffected.
+   -------------------------------------------------------------------------- */
+:root{
+  --shell-max:1120px;
+  --shell-pad:32px;
+  --shell-content-max:calc(var(--shell-max) - 2*var(--shell-pad)); /* 1056px */
+}
+@media(max-width:760px){
+  :root{ --shell-pad:22px; }
+}
+
 .ed-gnav{position:fixed;top:0;left:0;right:0;z-index:9999;background:rgba(244,239,230,.86);backdrop-filter:blur(10px);border-bottom:1px solid rgba(35,39,30,.08);font-family:Mulish,sans-serif}
 .ed-gnav__in{max-width:1120px;margin:0 auto;padding:15px 32px;display:flex;align-items:center;justify-content:space-between;gap:24px}
 .ed-gnav__brand{display:flex;align-items:baseline;gap:11px;text-decoration:none;font-family:'Cormorant Garamond',Georgia,serif;font-size:25px;font-weight:600;color:#3A4429}
