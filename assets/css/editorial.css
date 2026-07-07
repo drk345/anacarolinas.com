@@ -467,7 +467,7 @@ section[id] { scroll-margin-top: 96px }
   #navLinks { position: absolute; top: 100%; right: 0; left: 0; display: none; flex-direction: column; align-items: stretch; gap: 0; background: var(--cream); border-top: 1px solid rgba(35,39,30,.1); padding: 8px 24px 14px }
   #navLinks.open { display: flex }
   #navLinks a { min-height: 48px; display: flex; align-items: center; color: var(--olive) }
-  #navLinks .ed-navcta { color: #fff }
+  #navLinks .ed-navcta, #navLinks .navcta { color: #fff }
   #navToggle { display: flex }
   .ed-distinction { padding: 28px 20px }
   .ed-includes { padding: 28px 24px }
