@@ -114,3 +114,25 @@
 .tail.lt{background:#e3a986;opacity:.6}
 @media(max-width:880px){.two,.two.l,.two.r{grid-template-columns:1fr;gap:42px}.flow{grid-template-columns:1fr 1fr;gap:32px 0}.step+.step{border-left:0}.chips{grid-template-columns:1fr 1fr}.photo.order-first{order:-1}.hero-photo{max-width:440px;margin:0 auto}}
 @media(max-width:520px){.chips{grid-template-columns:1fr}.flow{grid-template-columns:1fr}.pillar{grid-template-columns:1fr;gap:6px}.acc{grid-template-columns:1fr;gap:4px}}
+
+/* --------------------------------------------------------------------------
+   Phase 2C alignment layer (owner-approved): align Sobre Ana's outer rhythm
+   to Inicio via the shared shell tokens (1056px content column, 32px desktop
+   gutter, 22px mobile gutter). Vertical editorial pacing (the clamp() top/
+   bottom padding) is intentionally preserved; only horizontal rhythm changes.
+   Internal caps (.narrow 800px and inline-width statement bands) untouched.
+   -------------------------------------------------------------------------- */
+.wrap{max-width:var(--shell-content-max,1056px)}
+.sec{padding-left:var(--shell-pad,32px);padding-right:var(--shell-pad,32px)}
+
+/* Production defect fix (owner-approved): on mobile the hero photo collapsed
+   to a 12x15px sliver. Cause: the export's mobile rule `.hero-photo{max-width:
+   440px;margin:0 auto}` - in CSS grid, auto margins absorb the free space, so
+   the item shrinks to max-content, and an empty background-image div's
+   max-content is just its 12px of borders. Giving it a real width restores
+   the photo at full column width (bounded by the existing 440px max-width),
+   matching how the four other biography photos already behave on mobile.
+   Same photo, same crop behavior, same organic frame - no redesign. */
+@media(max-width:880px){
+  .hero-photo{width:100%}
+}
