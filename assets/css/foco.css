@@ -268,3 +268,19 @@
 .decchip{justify-self:start}
 }
 @media(max-width:560px){.grid4,.discgrid,.contact{grid-template-columns:1fr}.flownode{width:46%}}
+
+/* --------------------------------------------------------------------------
+   Phase 2C alignment layer (owner-approved): align Foco's BODY rhythm to
+   Inicio via the shared shell tokens (1056px content column, 32px desktop
+   gutter, 22px mobile gutter). The HERO (.herowrap/.hero, 1290px + >=1700px
+   tier) is a documented page-level exception and is deliberately untouched,
+   as is its vertical fold rhythm (scheduled separately). Internal caps
+   (.narrow 920, .probinner/.probpanel, .pricewrap 940, .creed-h 760, etc.)
+   are intentionally preserved. Baseline rules above remain verbatim.
+   -------------------------------------------------------------------------- */
+.inner{max-width:var(--shell-content-max,1056px)}
+.entrena{max-width:var(--shell-content-max,1056px)}
+.sec{padding-left:var(--shell-pad,32px);padding-right:var(--shell-pad,32px)}
+.problema{padding-left:var(--shell-pad,32px);padding-right:var(--shell-pad,32px)}
+.creed{padding-left:var(--shell-pad,32px);padding-right:var(--shell-pad,32px)}
+.foot{padding-left:var(--shell-pad,32px);padding-right:var(--shell-pad,32px)}
