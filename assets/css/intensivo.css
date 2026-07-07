@@ -286,3 +286,25 @@ html,body{margin:0}
 .sec{padding-left:var(--shell-pad,32px);padding-right:var(--shell-pad,32px)}
 /* .weeks (direct .sec child, 1060px) exceeded the new 1056px shell by 4px; cap to rhythm */
 .weeks{max-width:var(--shell-content-max,1056px)}
+
+/* --------------------------------------------------------------------------
+   Mobile horizontal-overflow correction (owner-approved QA fix): removes the
+   ~6px mobile wiggle inherited from the Phase 2B baseline. Two offenders, both
+   mobile-only, desktop untouched:
+   1) .stat -- in the 2-column mobile stats grid, grid items default to
+      min-width:auto, so a long value ("Comprender, entrenar e integrar una
+      nueva respuesta") forces its column wider than the container, and the
+      grid's own overflow:hidden then clips that content. min-width:0 lets the
+      columns shrink so the value wraps cleanly instead of overflowing/clipping.
+   2) .guide-blob -- the decorative hero blob is absolutely positioned with a
+      -40/-26px bleed beyond .hero-figure; on phone widths the figure fills the
+      content column so that bleed spills past the viewport. Clipping the hero
+      section on the x-axis only (overflow-x:clip -- no scroll container, no
+      y-axis side effect) keeps the blob's designed shape and bleed while
+      stopping it from driving page scroll. On desktop the blob has ample room
+      inside the 1140px hero grid, so no rule is needed there.
+   -------------------------------------------------------------------------- */
+@media(max-width:760px){
+.stat{min-width:0}
+.hero{overflow-x:clip}
+}
