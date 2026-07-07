@@ -285,3 +285,20 @@ body{margin:0;background:#F4EFE6;color:#403F36;font-family:'Mulish',sans-serif;f
 @media(max-width:760px){.steps{grid-template-columns:1fr;gap:34px}.steps::before{display:none}}
 @media(max-width:760px){.mappath{left:6px;transform:none;width:48px}.mrow{grid-template-columns:1fr}.mc-l,.mc-r{grid-column:1}.mc{margin-left:52px}.mc-l .mc-dot,.mc-r .mc-dot{left:-33px;right:auto}}
 @media(max-width:760px){.cols,.check-grid,.price-grid{grid-template-columns:1fr}.tri{grid-template-columns:1fr}.guide-row{gap:22px}.gi{width:64px}.gi svg{width:54px;height:54px}.contact-row{flex-wrap:wrap;gap:10px 18px}.contact-lbl{width:auto}.hero-top{flex-direction:column}}
+
+/* --------------------------------------------------------------------------
+   Phase 2C.5 shell widening (owner-approved): align Sesiones' OUTER shell to
+   Inicio's rhythm via the shared shell tokens -- .shell 980px/36px gutters ->
+   1120px max with 32px desktop / 22px mobile gutters (content column 908 ->
+   1056, matching index.html exactly). .shell-n keeps its intimate 780px cap
+   and only adopts the shared gutter rhythm (gutters only matter on narrow
+   viewports where the cap does not bind). Every inner reading cap is
+   deliberately preserved: .hero-main 560, .hero-quote 20ch, .hero-body 50ch,
+   .toolskicker 760, .twwheel 860, .ringwrap 900, .wheel 700, .tri-2 760,
+   .boxq-in 62ch, .step-txt 30ch, etc. Decorative threads / conv marks /
+   closing mark are section-centered (left:50%) and are not repositioned --
+   the shell widens symmetrically around the same centerline. Baseline rules
+   above remain verbatim.
+   -------------------------------------------------------------------------- */
+.shell{max-width:var(--shell-max,1120px);padding-left:var(--shell-pad,32px);padding-right:var(--shell-pad,32px)}
+.shell-n{padding-left:var(--shell-pad,32px);padding-right:var(--shell-pad,32px)}
