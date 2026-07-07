@@ -302,3 +302,14 @@ body{margin:0;background:#F4EFE6;color:#403F36;font-family:'Mulish',sans-serif;f
    -------------------------------------------------------------------------- */
 .shell{max-width:var(--shell-max,1120px);padding-left:var(--shell-pad,32px);padding-right:var(--shell-pad,32px)}
 .shell-n{padding-left:var(--shell-pad,32px);padding-right:var(--shell-pad,32px)}
+
+/* --------------------------------------------------------------------------
+   Contact-routing anchor offset (owner-approved): #contacto is now the on-page
+   scroll target for the header "Reservar" and the three in-page CTAs that
+   previously pointed at the legacy contacto.html. scroll-margin-top lets the
+   section land just below the fixed .ed-gnav header (69px desktop / 77px
+   mobile) with its own top padding intact; without it the small eyebrow tucks
+   ~21px under the header on mobile. Invisible: affects anchor-jump landing
+   only -- zero layout or paint change.
+   -------------------------------------------------------------------------- */
+#contacto{scroll-margin-top:88px}
