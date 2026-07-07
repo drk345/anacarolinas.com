@@ -284,3 +284,20 @@
 .problema{padding-left:var(--shell-pad,32px);padding-right:var(--shell-pad,32px)}
 .creed{padding-left:var(--shell-pad,32px);padding-right:var(--shell-pad,32px)}
 .foot{padding-left:var(--shell-pad,32px);padding-right:var(--shell-pad,32px)}
+
+/* --------------------------------------------------------------------------
+   Phase 2C.4 fold-height correction (owner-approved): the fold overflow at
+   1920x1001 comes solely from the >=1700px hero tier, where the 880px photo
+   frame plus 118px top padding push the hero wrap to 1050px (CTA at y825-880,
+   scroll-cue ring below the fold, no post-hero space). Correction is scoped
+   to that tier only: hero top padding 118->88 and photo frame 880->790, so
+   the wrap lands at ~930px -- CTA fully in view (~y750-805), scroll cue
+   visible, ~71px of post-hero space. Bottom padding stays 126px to keep the
+   designed 4px clearance between the frame bottom and the scroll-cue ring.
+   Hero WIDTH is untouched: 1290px container, 700px photo column, blob bleed,
+   base tier (<1700px) and mobile all remain exactly as committed.
+   -------------------------------------------------------------------------- */
+@media(min-width:1700px){
+.hero{padding-top:88px}
+.heroframe{height:790px}
+}
