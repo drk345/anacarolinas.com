@@ -313,3 +313,19 @@ body{margin:0;background:#F4EFE6;color:#403F36;font-family:'Mulish',sans-serif;f
    only -- zero layout or paint change.
    -------------------------------------------------------------------------- */
 #contacto{scroll-margin-top:88px}
+
+/* --------------------------------------------------------------------------
+   Phase 2C.6 hero top-alignment (owner-approved): the Sesiones hero sat too
+   high -- its h1 landed at y~125 on desktop vs the family's ~197-207 (index
+   197, intensivo 200, foco 207), and its image top at y~91 read as tucked
+   under the fixed 69px header. Owner review: the hero (text and picture) feels
+   too close to the header. Fix (desktop/tablet >=821px, above the width where
+   the hero stacks to one column): raise the hero's top padding so the text and
+   image drop together into a calmer top position consistent with the rest of
+   the site. Mobile (<=820px) keeps its original compact top padding. Copy,
+   image size/crop, decorative thread ornaments, and the hero's bottom spacing
+   are untouched; the primary CTA stays within the fold.
+   -------------------------------------------------------------------------- */
+@media(min-width:821px){
+.hero{padding-top:164px}
+}

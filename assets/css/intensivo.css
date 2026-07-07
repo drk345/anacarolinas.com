@@ -308,3 +308,16 @@ html,body{margin:0}
 .stat{min-width:0}
 .hero{overflow-x:clip}
 }
+
+/* --------------------------------------------------------------------------
+   Phase 2C.6 hero kicker alignment (owner-approved): the hero centres the text
+   column against the fixed-height image, so the kicker's vertical position
+   drifted with text height across widths (164px at 1920, ~181px at 1366) --
+   inconsistent with the family. Top-align only the text column and offset it a
+   touch so the "ALMAVIVA * Programa Intensivo" kicker sits at the shared ~164px
+   at every desktop width (hero padding-top is a fixed 150 -> +10 + the kicker's
+   own ~4px line offset = ~164). The image stays centred. Mobile (<=980, where
+   the hero stacks) is untouched. */
+@media(min-width:981px){
+.hero-in{align-self:start;padding-top:14px}
+}

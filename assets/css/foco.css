@@ -301,3 +301,47 @@
 .hero{padding-top:88px}
 .heroframe{height:790px}
 }
+
+/* --------------------------------------------------------------------------
+   Phase 2C.6 hero text left-alignment (owner-approved): the wide 1290px hero
+   is centered, which puts its text column at x363 -- 69px left of the shared
+   432/shell content margin that every other page's hero text and the header
+   logo sit on. Owner review: Foco hero text reads as detached to the left.
+   Because the h1 "ALMAVIVA" already fills its column at 88px, insetting the
+   text can't work (it would overlap the image); instead, on desktop widths
+   where the hero is actually centered and misaligned (>=1290px), stop
+   centering the hero and anchor its LEFT content edge to the shared shell
+   margin (same tokens the body rhythm uses), letting the wide image extend to
+   the right with a clamped margin. Text now aligns with the family; the image
+   stays 700px (>=1700) / 440px (base) and premium. Grid columns, the vertical
+   fold padding from 2C.4, copy, and the wide-image exception are all
+   preserved. Below 1290px the hero is already near full-width -- no change.
+   -------------------------------------------------------------------------- */
+@media(min-width:981px){
+.hero{max-width:none;margin:0;padding-left:max(var(--shell-pad,32px),calc((100% - var(--shell-max,1120px))/2 + var(--shell-pad,32px)));padding-right:clamp(48px,6vw,130px)}
+/* Phase 2C.6 kicker alignment: the hero centres the text against the tall
+   image, so text height (which changed when the column widened above) drove
+   the kicker's vertical position -- it landed ~18px below the family. Top-
+   align only the text column and offset it so the kicker sits at the shared
+   ~164px from the top, matching Inicio/Intensivo. The image stays centred and
+   premium. base tier hero padding-top is 118; +42 (plus the kicker's own ~4px
+   line offset) lands it at ~164. The >=1700 tier (hero padding-top 88) needs a
+   different value -- see the block at the end of the file, placed AFTER this
+   one so its later, equal-specificity rule wins. */
+.hero > div:first-of-type{align-self:start;padding-top:42px}
+}
+
+@media(min-width:1700px){
+/* >=1700 hero padding-top is 88 -> +72 lands the kicker at the shared ~164px */
+.hero > div:first-of-type{padding-top:72px}
+/* Phase 2C.6 soft image reduction (owner-approved): at >=1700 the hero image
+   ballooned to 700x790 (~2.25x the 440x560 family, ~31% of the fold) and read
+   as dominating the page. Reduce it to 560x630 (~1.4x the family) so Foco stays
+   a deliberate premium/wide exception without overpowering. The base tier
+   (<1700, already 440x560 = family) and mobile are untouched. padding-right is
+   pinned to calc(50% - 700px) so the hero's inner width stays ~1228px: the text
+   column (~592) and its left/shell alignment and kicker are unchanged -- only
+   the image narrows. */
+.hero{grid-template-columns:1fr 560px;padding-right:calc(50% - 700px)}
+.heroframe{height:630px}
+}

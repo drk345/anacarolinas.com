@@ -136,3 +136,23 @@
 @media(max-width:880px){
   .hero-photo{width:100%}
 }
+
+/* --------------------------------------------------------------------------
+   Phase 2C.6 hero kicker alignment (owner-approved): the Sobre mi hero kicker
+   sat at ~112px from the top -- ~52px higher than the shared family position
+   (Inicio/Intensivo ~164). Its top offset came from an inline
+   `padding-top:clamp(56px,7vh,96px)` on #top, which also scaled with window
+   HEIGHT (the fixed 69px header does not), giving an inconsistent gap. On
+   desktop (>=881px, above the width where the hero stacks) pin a fixed top
+   padding so the "ALMAVIVA * NEUROTRAINING..." kicker lands at the shared
+   ~164px, keeping the page's editorial character (no forced CTA, unchanged
+   copy/photos). Mobile keeps the original compact top spacing.
+   -------------------------------------------------------------------------- */
+@media(min-width:881px){
+  #top{padding-top:164px !important}
+  /* The hero row centres the text against the taller photo (.two{align-items:
+     center}), so the kicker drifted with photo/text height across widths. Top-
+     align only the hero text column so the kicker is pinned by the fixed top
+     padding above (~164px) at every width; the photo stays centred. */
+  #top .col{align-self:start}
+}
