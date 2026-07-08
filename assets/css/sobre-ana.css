@@ -171,3 +171,17 @@
    -------------------------------------------------------------------------- */
 .ph{aspect-ratio:4/5}
 .ph.p1993{aspect-ratio:3/4}
+
+/* --------------------------------------------------------------------------
+   Mobile hero calming (owner-approved): on phones the Sobre mi hero stacked
+   the full intro text above a full-width ~331x414 portrait, so the photo
+   began ~58% down the first viewport and its bottom was cut ~60px below the
+   fold (worse behind mobile-Safari's bottom UI) -- it read as oversized and
+   awkwardly clipped. Reduce the mobile portrait to a calmer 300px max-width
+   and tighten the hero's text->photo gap so the first screen feels lighter
+   and the photo reads as intentional. Desktop (>=881px) is untouched, as are
+   the CSP aspect-ratio rules and the photo/image files themselves. */
+@media(max-width:880px){
+  .hero-photo{max-width:300px}
+  #top .two{gap:28px}
+}
