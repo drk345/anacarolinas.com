@@ -156,3 +156,18 @@
      padding above (~164px) at every width; the photo stays centred. */
   #top .col{align-self:start}
 }
+
+/* --------------------------------------------------------------------------
+   CSP photo-height fix (owner-approved): the biography photos are background-
+   image divs whose height came only from an inline `style="aspect-ratio:..."`
+   attribute. The deployed CSP (style-src 'self', no 'unsafe-inline') blocks
+   inline style attributes, so ONLINE those divs collapsed to ~0 height and the
+   photos never painted -- they render locally only because the dev server
+   sends no CSP header. Defining the aspect ratios here, in a same-origin
+   stylesheet the CSP does allow, restores the photos online WITHOUT weakening
+   the CSP. Four photos are 4/5; ana-1993 (.ph.p1993) is 3/4 -- identical
+   values to the inline attributes, so local rendering is unchanged. The inline
+   attributes are left in place (harmless: ignored online, same value locally).
+   -------------------------------------------------------------------------- */
+.ph{aspect-ratio:4/5}
+.ph.p1993{aspect-ratio:3/4}
