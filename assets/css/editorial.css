@@ -1005,3 +1005,17 @@ section[id] { scroll-margin-top: 96px }
   .ed-home-exact .badge-ic { width: 26px; height: 26px; }
   .ed-home-exact .lab.badge-lab { font-size: 10px; letter-spacing: .5px; }
 }
+
+/* Privacidad rhythm alignment (scoped via body.ed-legal): the legal page used
+   editorial.css's default shell (--maxw 1240 / 40px side padding / 24-20px
+   mobile), which read wider and out of step with the active site's shared
+   1120 / 32 / 22 rhythm. Match it here, scoped to the privacy page only, so the
+   legacy .ed-* pages (contacto/programas/conecta) and index are unaffected
+   (index does not use these selectors). Legal copy, sections, header/footer,
+   and noindex are untouched — only the content shell width/side-padding change. */
+.ed-legal .ed-pg-hero__in,
+.ed-legal .ed-sec-body--sm { max-width: 1120px; padding-left: 32px; padding-right: 32px; }
+@media (max-width: 768px) {
+  .ed-legal .ed-pg-hero__in,
+  .ed-legal .ed-sec-body--sm { padding-left: 22px; padding-right: 22px; }
+}
