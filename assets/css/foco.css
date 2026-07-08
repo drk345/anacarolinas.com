@@ -334,14 +334,18 @@
 @media(min-width:1700px){
 /* >=1700 hero padding-top is 88 -> +72 lands the kicker at the shared ~164px */
 .hero > div:first-of-type{padding-top:72px}
-/* Phase 2C.6 soft image reduction (owner-approved): at >=1700 the hero image
-   ballooned to 700x790 (~2.25x the 440x560 family, ~31% of the fold) and read
-   as dominating the page. Reduce it to 560x630 (~1.4x the family) so Foco stays
-   a deliberate premium/wide exception without overpowering. The base tier
-   (<1700, already 440x560 = family) and mobile are untouched. padding-right is
-   pinned to calc(50% - 700px) so the hero's inner width stays ~1228px: the text
-   column (~592) and its left/shell alignment and kicker are unchanged -- only
-   the image narrows. */
-.hero{grid-template-columns:1fr 560px;padding-right:calc(50% - 700px)}
-.heroframe{height:630px}
+/* Phase 2C.6 soft image reduction (owner-approved), refined: at >=1700 the raw
+   photo frame is trimmed 700->520 wide / 880->585 tall, AND -- the real driver
+   of "feels much bigger" -- the sage blob is tightened from its enlarged >=1700
+   offsets (-46/-62/-40/-46, which grew the visual UNIT to ~711x766 = 545k,
+   ~1.9x the family) back down to hug the frame. Together this brings Foco's
+   combined photo+blob unit to ~1.1-1.2x Intensivo's unit: still a subtle
+   premium/larger hero, no longer dominant. padding-right is pinned to
+   calc(50% - 660px) so the hero inner width stays ~1188px and the text column
+   (~592), its shell-left alignment, and the kicker are all unchanged -- only
+   the image/blob shrink. Base tier (<1700 = 440x560 family) and mobile
+   untouched. */
+.hero{grid-template-columns:1fr 520px;padding-right:calc(50% - 660px)}
+.heroframe{height:585px}
+.hero-blob{top:-22px;left:-30px;right:-20px;bottom:-22px}
 }
