@@ -992,3 +992,16 @@ section[id] { scroll-margin-top: 96px }
   .ed-home-exact .navlinks a { min-height: 48px; align-items: center; display: flex !important; }
   .ed-home-exact .hamb { display: flex; }
 }
+
+/* Inicio hero badge — phone fit: the badge is absolutely positioned (right:-10px)
+   so its width is capped at the hero-image width. The longer badge label
+   ("COMPRENDER - RECONECTAR - PRACTICAR") is ~314px, which exceeds the image
+   width on phones (~316-371px) and wrapped to two bulky lines. On phone widths
+   only, tighten the pill (smaller icon/padding/gap, pulled just inside the
+   image) and reduce the label's size/letter-spacing so the full text sits on
+   one clean line. Desktop/tablet badge is unchanged. */
+@media (max-width: 480px) {
+  .ed-home-exact .badge { right: 6px; padding: 9px 14px; gap: 7px; }
+  .ed-home-exact .badge-ic { width: 26px; height: 26px; }
+  .ed-home-exact .lab.badge-lab { font-size: 10px; letter-spacing: .5px; }
+}
