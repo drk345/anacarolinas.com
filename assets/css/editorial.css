@@ -1009,13 +1009,26 @@ section[id] { scroll-margin-top: 96px }
 /* Privacidad rhythm alignment (scoped via body.ed-legal): the legal page used
    editorial.css's default shell (--maxw 1240 / 40px side padding / 24-20px
    mobile), which read wider and out of step with the active site's shared
-   1120 / 32 / 22 rhythm. Match it here, scoped to the privacy page only, so the
-   legacy .ed-* pages (contacto/programas/conecta) and index are unaffected
-   (index does not use these selectors). Legal copy, sections, header/footer,
-   and noindex are untouched — only the content shell width/side-padding change. */
+   1120 / 32 / 22 rhythm. Match it here (hero, every content section, AND the
+   footer, so the column is consistent all the way down), scoped to the privacy
+   page only, so the legacy .ed-* pages (contacto/programas/conecta) and index
+   are unaffected (index does not use these selectors). Legal copy, section
+   order, and noindex are untouched — only the shell width/side-padding change. */
 .ed-legal .ed-pg-hero__in,
-.ed-legal .ed-sec-body--sm { max-width: 1120px; padding-left: 32px; padding-right: 32px; }
+.ed-legal .ed-sec-body--sm,
+.ed-legal .ed-footer__in { max-width: 1120px; padding-left: 32px; padding-right: 32px; }
 @media (max-width: 768px) {
   .ed-legal .ed-pg-hero__in,
-  .ed-legal .ed-sec-body--sm { padding-left: 22px; padding-right: 22px; }
+  .ed-legal .ed-sec-body--sm,
+  .ed-legal .ed-footer__in { padding-left: 22px; padding-right: 22px; }
 }
+/* Privacidad now uses the shared .ed-gnav header (site-shell.css), same as the
+   active pages. But editorial.css's own #navLinks mobile rules below set
+   `color: var(--olive)` on EVERY link in the panel — at ID specificity that
+   beats the shell's class colors on this page only. Left unchecked that turns
+   the terracotta "Reservar" pill's text olive (~1.9:1, unreadable) and shifts
+   the plain links off the shell's forest. Restore the shell colors, scoped to
+   the privacy page, so the mobile menu renders identically to the .ed-gnav
+   pages. (The active pages never hit this because they don't load editorial.css.) */
+.ed-legal #navLinks .ed-gnav__link { color: #2F3B24; }
+.ed-legal #navLinks .ed-gnav__cta { color: #fff; }

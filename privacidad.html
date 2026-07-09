@@ -11,21 +11,21 @@
   <link rel="preload" as="font" type="font/woff2" href="assets/fonts/mulish-400-normal-latin.woff2" crossorigin>
   <link rel="preload" as="font" type="font/woff2" href="assets/fonts/spectral-600-normal-latin.woff2" crossorigin>
   <link rel="preload" as="font" type="font/woff2" href="assets/fonts/spectral-400-italic-latin.woff2" crossorigin>
-  <link rel="stylesheet" href="assets/css/editorial.css?v=16">
+  <link rel="stylesheet" href="assets/css/site-shell.css?v=2">
+  <link rel="stylesheet" href="assets/css/editorial.css?v=17">
 </head>
 <body class="ed-legal">
 
   <!-- NAV -->
-  <header class="site-nav">
-    <nav class="site-nav__in" aria-label="Navegación principal">
-      <a class="ed-brand" href="index.html"><span class="ed-brand__name">Ana Carolina</span></a>
-      <button type="button" id="navToggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="navLinks"><span></span><span></span><span></span></button>
-      <div id="navLinks">
-        <a class="ed-nl" href="index.html">Inicio</a>
-        <a class="ed-nl" href="index.html#programas">Programas</a>
-        <a class="ed-nl" href="sesiones-individuales.html">Sesiones individuales</a>
-        <a class="ed-nl" href="sobre-ana.html">Sobre mí</a>
-        <a class="ed-navcta" href="index.html#contacto">Reservar</a>
+  <header class="ed-gnav">
+    <nav class="ed-gnav__in" aria-label="Navegación principal">
+      <a href="index.html" class="ed-gnav__brand">Ana Carolina</a>
+      <button type="button" id="navToggle" class="ed-gnav__hamb" aria-label="Abrir menú" aria-expanded="false" aria-controls="navLinks"><span></span><span></span><span></span></button>
+      <div id="navLinks" class="ed-gnav__links">
+        <a href="index.html" class="ed-gnav__link">Inicio</a>
+        <a href="index.html#programas" class="ed-gnav__link">Programas</a>
+        <a href="sobre-ana.html" class="ed-gnav__link">Sobre mí</a>
+        <a href="index.html#contacto" class="ed-gnav__cta">Reservar</a>
       </div>
     </nav>
   </header>
