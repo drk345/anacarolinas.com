@@ -59,11 +59,11 @@
 .circle{position:absolute;z-index:0;border-radius:50%}
 .blob{position:absolute;z-index:0}
 .ph{position:relative;z-index:1;width:100%;background-size:cover;background-position:center;box-shadow:0 30px 70px -36px rgba(30,61,52,.5);border:6px solid var(--ivory)}
-.ph.p1990{background-image:url("../img/sobre-ana/ana-1990.jpg")}
-.ph.p2017{background-image:url("../img/sobre-ana/ana-2017.jpg")}
-.ph.p1993{background-image:url("../img/sobre-ana/ana-1993.jpg")}
-.ph.p2003{background-image:url("../img/sobre-ana/ana-2003.jpg")}
-.ph.p1998{background-image:url("../img/sobre-ana/ana-1998.jpg")}
+.ph.p1990{background-image:url("../img/sobre-ana/ana-1990.webp")}
+.ph.p2017{background-image:url("../img/sobre-ana/ana-2017.webp")}
+.ph.p1993{background-image:url("../img/sobre-ana/ana-1993.webp")}
+.ph.p2003{background-image:url("../img/sobre-ana/ana-2003.webp")}
+.ph.p1998{background-image:url("../img/sobre-ana/ana-1998.webp")}
 .org1{border-radius:64% 36% 58% 42%/56% 44% 56% 44%}
 .org2{border-radius:48% 52% 42% 58%/56% 44% 60% 40%}
 .org3{border-radius:300px 300px 20px 20px}
