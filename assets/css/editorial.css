@@ -1034,3 +1034,26 @@ section[id] { scroll-margin-top: 96px }
    pages. (The active pages never hit this because they don't load editorial.css.) */
 .ed-legal #navLinks .ed-gnav__link { color: #2F3B24; }
 .ed-legal #navLinks .ed-gnav__cta { color: #fff; }
+
+/* ==========================================================================
+   Batch-1 audit fixes (2026-07-10) — CSS-only, mobile-scoped where noted.
+   ========================================================================== */
+
+/* B8 — Inicio mobile hero: at 390x844 the fixed 580px hero image + 164px
+   top padding pushed the H1 across the fold and the CTA below it. On phones
+   only, tighten the hero top gap and cap the (image-first) hero photo height
+   so the H1 and both CTAs land inside the first viewport. Desktop/tablet
+   (>=761px) geometry is untouched. */
+@media (max-width: 760px) {
+  .ed-home-exact .sec-top { padding-top: 96px; }
+  .ed-home-exact .img-hero { height: 360px; }
+}
+
+/* A4 — Privacidad legal prose measure: the deployed CSP strips inline styles,
+   and the draft-notice box (.ed-cohort) had no width cap, so legal paragraphs
+   ran ~143ch. Constrain the reading text to a readable measure (~68ch).
+   Scoped to .ed-legal so shared classes on other pages are unaffected. */
+.ed-legal .ed-prose p,
+.ed-legal .ed-prose li,
+.ed-legal .ed-cohort p,
+.ed-legal .ed-therapy p { max-width: 58ch; }

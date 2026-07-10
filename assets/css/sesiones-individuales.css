@@ -329,3 +329,10 @@ body{margin:0;background:#F4EFE6;color:#403F36;font-family:'Mulish',sans-serif;f
 @media(min-width:821px){
 .hero{padding-top:164px}
 }
+
+/* A4 (Batch-1 audit fix, 2026-07-10) — readable prose measure. Inline
+   max-width constraints (48-62ch) are stripped by the deployed CSP, so body
+   prose ran ~116-166ch. Cap the reading classes in external CSS (~66ch) so the
+   live surface keeps a readable line length. Narrow columns are unaffected
+   (the tighter .intro-c .body 60ch rule still wins where it applies). */
+.lead, .body, .note { max-width: 54ch; margin-inline: auto; }

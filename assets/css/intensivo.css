@@ -321,3 +321,14 @@ html,body{margin:0}
 @media(min-width:981px){
 .hero-in{align-self:start;padding-top:14px}
 }
+
+/* A4 (Batch-1 audit fix, 2026-07-10) — readable prose measure. Inline
+   max-width constraints (640-840px) are stripped by the deployed CSP, so body
+   prose ran ~125-147ch. Cap the reading classes in external CSS (~66ch) so the
+   live surface keeps a readable line length. Narrow columns are unaffected. */
+.lead, .small { max-width: 54ch; margin-inline: auto; }
+
+/* B10 (Batch-1 audit fix) — the #descubrimiento anchor target has no
+   scroll-margin, so navigating to it landed the eyebrow ~7px under the fixed
+   header. Clear the header height. */
+#descubrimiento { scroll-margin-top: 88px; }
