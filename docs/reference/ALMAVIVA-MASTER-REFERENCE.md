@@ -7,6 +7,8 @@ Supersedes: `docs/reports/almaviva-frozen-spec.md`
 
 - **2026-07-02** — This file created as the canonical reference, superseding `docs/reports/almaviva-frozen-spec.md`. Specifically, the **Programas page / offer architecture section** of the old frozen spec is now outdated and must not be used: it described a "2 programs only" (Foco + Intensivo) structure and left the status of Conecta/Sesiones as an open decision. That decision has since been made. See Section 5 below for the current, confirmed structure. All other sections of the old frozen spec (color system, typography, CTA system, page rhythm, image treatment, CSP constraints, forbidden terms) remain accurate and are carried forward here unchanged. The old file (`docs/reports/almaviva-frozen-spec.md`) is kept in place for historical reference only — do not treat its Programas section as current.
 
+- **2026-07-10** — Ratified **Cormorant Garamond** as the ALMAVIVA display serif, matching the approved homepage and programme hero system. Retired **Lato** and **Playfair Display** from active pages. Current sanctioned families: Cormorant Garamond, Spectral, Mulish. This supersedes the earlier "Headings H1/H2 → Spectral" and "two families only" wording in Section 2.
+
 ---
 
 ## 1. Color system
@@ -35,13 +37,15 @@ Supersedes: `docs/reports/almaviva-frozen-spec.md`
 
 | Use | Font | Weight | Style | Notes |
 |---|---|---|---|---|
-| Headings H1/H2 | Spectral | 600 | Normal | Uppercase where established (Programas panels, CTA strip titles) |
-| Pull quotes / bridge | Spectral | 400 | Italic | Used in bridge sections, Sobre Ana narrative |
-| Body text | Mulish | 400 | Normal | All running copy |
-| Eyebrow labels | Mulish | 800 | Uppercase | `11px`, `2.5px` letter-spacing |
+| Display / hero headings | Cormorant Garamond | 400–600 | Normal / Italic | The ALMAVIVA display serif: homepage wordmark-style moments, programme hero titles, Sobre Ana hero, large emotional statements, and selected editorial display treatments (e.g. Sobre Ana section headings, Sesiones hero quote). |
+| Editorial headings / bridge text | Spectral | 400–600 | Normal / Italic | Default serif for section headings (H2/H3), reflective bridge phrases, pull-quotes, and narrative asides. |
+| Body text | Mulish | 400 | Normal | All running copy and long-form explanatory text. |
+| Labels / eyebrows / nav / UI | Mulish | 600–800 | Normal / Uppercase | Eyebrow labels (`11px`, `2.5px` tracking), nav links, buttons, captions, form/UI text, and small structured elements. |
 
-**No new display fonts. No external fonts (CDNs). No Google Fonts.**
-Both Spectral and Mulish are self-hosted from `assets/fonts/`.
+**Three self-hosted families only — Cormorant Garamond (display), Spectral (editorial serif), Mulish (body / UI).**
+No other display fonts, no external fonts (CDNs), no Google Fonts at runtime. All three are self-hosted from `assets/fonts/`.
+**Lato and Playfair Display are retired** and must not be reintroduced.
+Adding, removing, or reassigning any family requires updating this section first.
 
 ---
 
