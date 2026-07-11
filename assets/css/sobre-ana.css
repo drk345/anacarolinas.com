@@ -180,3 +180,12 @@
   .hero-photo{max-width:300px}
   #top .two{gap:28px}
 }
+
+/* F28-partial: inline color/background moved to classes (deployed CSP style-src 'self' strips inline styles).
+   Restores the two dark terracotta bands + footer, step chips, contact card, and their light text. */
+.bg-terra{background:#9C4A1C}
+.t-peach{color:#F0D9C8}
+.t-warm{color:#F6E3D2}
+.tag-terra{background:rgba(168,80,31,.2);color:#E6B393}
+.contact-card{background:var(--ivory);border:1px solid #E7E0D2}
+.divider-line{background:#E7E0D2}

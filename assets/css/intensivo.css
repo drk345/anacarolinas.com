@@ -333,3 +333,7 @@ html,body{margin:0}
    scroll-margin, so navigating to it landed the eyebrow ~7px under the fixed
    header. Clear the header height. */
 #descubrimiento { scroll-margin-top: 88px; }
+
+/* F28-partial: inline color moved to class (deployed CSP strips inline styles).
+   Light caption on the dark callout-strong band. */
+.t-wash{color:#CFD8C9}

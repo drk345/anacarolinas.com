@@ -354,3 +354,7 @@
    surface keeps a readable line length. Narrow multi-column contexts are
    unaffected (max-width only bites when the column is wider than ~68ch). */
 .lead, .p, .p-sm { max-width: 54ch; margin-inline: auto; }
+
+/* F28-partial: inline text colors moved to classes (deployed CSP strips inline styles). */
+.c-forest{color:#4E5A37}
+.c-muted{color:#6A675F}
