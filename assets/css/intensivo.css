@@ -203,8 +203,12 @@ html,body{margin:0}
 .fq{display:flex;justify-content:space-between;gap:24px;align-items:center;padding:26px 6px;cursor:pointer;font-family:'Spectral',serif;font-size:clamp(20px,2.3vw,26px);color:#3A4429;font-weight:500}
 .fchev{flex:none;width:20px;height:20px;stroke:#A8501F;stroke-width:1.6;fill:none;transition:transform .3s ease}
 .fchev.on{transform:rotate(180deg)}
-.fa{max-height:0;overflow:hidden;opacity:0;transition:max-height .4s ease,opacity .35s ease}
-.fa.on{max-height:340px;opacity:1}
+/* Progressive enhancement: FAQ answers are visible by default (CSP blocks
+   inline JS online, so the accordion must not hide content without JS). The
+   collapse/accordion styling applies only when external main.js has added
+   the `js` class to <html>. */
+.js .fa{max-height:0;overflow:hidden;opacity:0;transition:max-height .4s ease,opacity .35s ease}
+.js .fa.on{max-height:340px;opacity:1}
 .fa-in{padding:0 6px 28px;font-size:15.5px;line-height:1.72;color:#6A675F;font-weight:300;max-width:680px}
 .disc{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center}
 .contacts{margin:28px 0 32px}
