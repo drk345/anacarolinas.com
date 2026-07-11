@@ -35,3 +35,16 @@
 .ed-gnav__links a{min-height:48px;align-items:center;display:flex!important}
 .ed-gnav__hamb{display:flex}
 }
+
+/* Batch-4 a11y/responsive (2026-07-11) */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+@media (max-width: 760px) {
+  .ed-gnav__brand { min-height: 44px; }
+}
