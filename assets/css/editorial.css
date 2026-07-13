@@ -1082,3 +1082,15 @@ section[id] { scroll-margin-top: 96px }
 .ed-home-exact .sec-programas .e-terra { color: #8F4319 }         /* "Los caminos" eyebrow on Cream3: 4.45 -> ~5.7 */
 .ed-home-exact .sec-sobre .e-terra { color: #7A3813 }             /* "Sobre mí" eyebrow + role on Salvia: 3.2 -> ~5.1 */
 .ed-home-exact .sec-sobre .e-olive { color: var(--olive) }        /* sobre-quote Olive2 on Salvia: 4.31 -> ~6.0 */
+
+/* Sobre Mí closing lines: render as regular body copy (match .lead above), not an italic olive quote.
+   Scoped to .sec-sobre .sobre-quote (0,3,0) so it overrides .ital / .sobre-quote / .sec-sobre .e-olive;
+   margin-bottom intentionally left to line 937 to preserve existing paragraph spacing. */
+.ed-home-exact .sec-sobre .sobre-quote {
+  font-family: Mulish, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: clamp(16px, 1.3vw, 18px);
+  line-height: 1.8;
+  color: #403F36;
+}
