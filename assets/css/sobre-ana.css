@@ -189,3 +189,63 @@
 .tag-terra{background:rgba(168,80,31,.2);color:#E6B393}
 .contact-card{background:var(--ivory);border:1px solid #E7E0D2}
 .divider-line{background:#E7E0D2}
+
+/* ==========================================================================
+   Production-parity: inline-style -> scoped CSS migration (2026-07-13).
+   The deployed CSP (style-src 'self') strips inline style="" attributes, so the
+   remaining per-element sizing/geometry below was lost online (decorative circles
+   vanished, emphasis text fell back to base sizes, hero/footer paddings and the
+   contact card were unstyled). Each declaration is reproduced here, scoped to this
+   page's elements, so local and production render identically. Aspect-ratios, the
+   dark-band colors/backgrounds, and the base .body/.h3 margins were already in CSS
+   above; those inline attributes are removed as redundant. Loads only on this page.
+   ========================================================================== */
+
+/* Section + container geometry */
+#top{padding-top:clamp(56px,7vh,96px)}                 /* mobile hero top pad (>=881 override remains above) */
+footer.sec{padding-top:clamp(86px,11vh,140px);padding-bottom:clamp(86px,11vh,140px)}
+.h1{margin-top:22px}
+.bg-warm .narrow,
+section.bg-terra .narrow{max-width:1056px}             /* the 2 statement bands (footer/bg-forest narrows stay 800) */
+.contact-card{border-radius:24px;padding:clamp(30px,4vw,46px)}
+.contact-card .divider{width:100%}
+
+/* Decorative biography circles (each has bespoke colour/size/offset) */
+.circle.sa-c1{background:#d7e0d3;width:108%;height:90%;left:-12%;top:8%}
+.circle.sa-c2{background:rgba(168,80,31,.12);width:46%;height:46%;right:-6%;bottom:-4%}
+.circle.sa-c3{background:#e6ddc9;width:104%;height:80%;left:-8%;bottom:-6%}
+.circle.sa-c4{background:#d7e0d3;width:104%;height:84%;right:-8%;top:6%}
+.circle.sa-c5{background:rgba(183,201,205,.5);width:104%;height:82%;left:-8%;top:8%}
+.circle.sa-c6{background:rgba(78,90,55,.16);width:104%;height:84%;left:-8%;top:6%}
+
+/* Hero subtitle */
+#top .col > .ital.t-terra{font-size:clamp(24px,2.8vw,36px);margin-top:18px}
+
+/* Emphasis statement headings (larger than base .h2, one per band) */
+.bg-warm .narrow > .h2{font-size:clamp(27px,3.4vw,44px);line-height:1.16;margin-top:16px}
+section.bg-terra .narrow > .h2{font-size:clamp(26px,3.1vw,44px);line-height:1.25;margin-top:16px}
+.bg-forest .narrow > .h2{font-size:clamp(29px,4.2vw,54px);line-height:1.22;margin-top:32px}
+
+/* "Mi historia" section emphasis lines */
+#historia .ital.t-terra{font-size:clamp(20px,2vw,26px);line-height:1.4;max-width:500px}
+#historia .ital.t-forest{font-size:20px}
+
+/* Acreditaciones list */
+.acc .h3{font-size:21px}
+.acc .body{margin-top:5px}
+
+/* Quoteline emphasis (two, distinguished by colour) */
+.quoteline .ital.t-forest{font-size:clamp(21px,2.2vw,29px);line-height:1.35;margin:0}
+.quoteline .ital.t-terra{font-size:clamp(20px,2.1vw,27px);line-height:1.4;max-width:440px;margin:0}
+
+/* "Mi enfoque" + "Hoy" + propósito emphasis lines */
+.ital.mb8{font-size:22px}
+.ital.t-terra.mt44{font-size:clamp(24px,2.6vw,34px);line-height:1.3}
+.ital.t-warm.mt56{font-size:clamp(22px,2.5vw,32px);line-height:1.4}
+
+/* Footer */
+.ital.t-warm.mt28{font-size:clamp(20px,2.4vw,30px)}
+footer .narrow > .t-ivory:not(.ital){font-family:var(--serif);letter-spacing:.32em;font-size:clamp(40px,7vw,80px);font-weight:600;margin:0}
+footer .ital.t-ivory{font-family:var(--serif);font-style:normal;font-weight:500;font-size:clamp(26px,3vw,38px)}
+footer .eyebrow.mt16{line-height:1.9}
+footer .divider.soft{margin-left:auto;margin-right:auto}
