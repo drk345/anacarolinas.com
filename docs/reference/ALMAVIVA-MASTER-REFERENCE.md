@@ -11,6 +11,8 @@ Supersedes: `docs/reports/almaviva-frozen-spec.md`
 
 - **2026-07-12** — Renamed **Método ALMAVIVA Pillar 2** from "Autoconocimiento" to "Observación". The five official pillars are now, in order: **1. Conocimiento · 2. Observación · 3. Intención Clara · 4. Acción Sostenible · 5. Integración**. Applied to the homepage five-pillar diagram + card title and to the Intensivo Pillar 2 copy and its 8-week progression labels. Generic prose uses of the word "autoconocimiento" (self-knowledge as a concept, not the pillar label) were intentionally left unchanged.
 
+- **2026-07-13** — Added the **Secure by design** section (see below) and the automated guardrails that enforce it: a fail-closed build security gate (`scripts/check-security.py`, wired into `scripts/build-pages.sh`), a dependency-free CSP-equivalent local preview (`scripts/serve-production.py`), a post-deploy verifier (`scripts/verify-live.sh`), and `docs/SECURE-DEVELOPMENT.md`. No brand, scientific, program, typography, or palette guidance changed.
+
 ---
 
 ## 1. Color system
@@ -170,6 +172,28 @@ For consistency with the homepage, `programas.html` should present the **same 3-
 - **No inline scripts** — all JS via `assets/js/main.js`
 - `noindex` on `privacidad.html` — must remain until legal review and custom domain connection
 - All URLs canonical to `https://anacarolinas-com.pages.dev/` until custom domain connects
+
+---
+
+## Secure by design
+
+**The production CSP is the development contract, not a post-deployment check.** Local development must reproduce the production CSP environment, and the build must fail closed when a security rule is violated. Enforced automatically by `scripts/check-security.py` (build gate), `scripts/serve-production.py` (CSP-equivalent local preview), and `scripts/verify-live.sh` (post-deploy verification). Full guide: `docs/SECURE-DEVELOPMENT.md`.
+
+Rules (all enforced by the build security gate):
+
+- Active production HTML must contain **no `style` attributes**.
+- Active production HTML must contain **no inline `<style>` blocks**.
+- Active production HTML must contain **no inline `<script>` blocks** — non-executable data blocks such as `type="application/ld+json"` are exempt, since the CSP does not execute them.
+- HTML event-handler attributes (`onclick`, `onload`, `onerror`, …) are **forbidden**.
+- `javascript:` URLs are **forbidden**.
+- `'unsafe-inline'` and `'unsafe-eval'` are **forbidden** — never add them, nonces, or hashes to "fix" rendering; move the inline style/script into an external, self-hosted file instead.
+- Scripts, styles, fonts, and images must be **self-hosted** unless explicitly approved.
+- Local production QA must apply the **same `_headers` as Cloudflare** (use `serve-production.py`, never a plain `http.server`).
+- The build **fails closed** when a security rule is violated.
+- Editable content must **not depend on brittle fixed coordinates or inline positioning** — layout belongs in scoped CSS classes, so a copy edit cannot collapse it and nothing is lost when the CSP strips inline styles.
+- **Every push must be followed by deployment-version and CSP verification** (`verify-live.sh`).
+
+*Transitional debt:* `foco.html`, `sesiones-individuales.html`, and `sobre-ana.html` still carry inline styles pending the same migration Intensivo received. The gate quarantines and loudly reports them, recorded as normalized per-style **structural fingerprints** — DOM-path locator plus declaration — in the tracked baseline `scripts/security-inline-style-baseline.json`. Any new, changed, or relocated inline style anywhere (even a move between two otherwise identical elements) fails the build, so the debt can only shrink and only via an explicit, reviewable baseline edit. Each page auto-enforces the instant it reaches 0 recorded fingerprints.
 
 ---
 

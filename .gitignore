@@ -21,3 +21,7 @@ Thumbs.db
 # Claude Code session data
 .claude/
 dist/
+
+# Python bytecode cache from the secure-by-design guardrail scripts
+__pycache__/
+*.pyc

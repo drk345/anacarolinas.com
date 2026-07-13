@@ -33,5 +33,13 @@ for forbidden in content source docs reports tools .git .claude node_modules out
   fi
 done
 
+# Secure-by-design gate (fail closed): reject inline styles/scripts, on* handlers,
+# javascript:/http:/external resources, unsafe embeds, and any weakened CSP before
+# the build can succeed. See scripts/check-security.py and docs/SECURE-DEVELOPMENT.md.
+python scripts/check-security.py dist || {
+  echo "BUILD ABORTED: security check failed (see violations above)."
+  exit 1
+}
+
 echo "Build complete: dist/"
 find dist -maxdepth 2 -type f | sort
