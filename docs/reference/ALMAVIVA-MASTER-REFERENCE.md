@@ -9,6 +9,8 @@ Supersedes: `docs/reports/almaviva-frozen-spec.md`
 
 - **2026-07-10** — Ratified **Cormorant Garamond** as the ALMAVIVA display serif, matching the approved homepage and programme hero system. Retired **Lato** and **Playfair Display** from active pages. Current sanctioned families: Cormorant Garamond, Spectral, Mulish. This supersedes the earlier "Headings H1/H2 → Spectral" and "two families only" wording in Section 2.
 
+- **2026-07-12** — Renamed **Método ALMAVIVA Pillar 2** from "Autoconocimiento" to "Observación". The five official pillars are now, in order: **1. Conocimiento · 2. Observación · 3. Intención Clara · 4. Acción Sostenible · 5. Integración**. Applied to the homepage five-pillar diagram + card title and to the Intensivo Pillar 2 copy and its 8-week progression labels. Generic prose uses of the word "autoconocimiento" (self-knowledge as a concept, not the pillar label) were intentionally left unchanged.
+
 ---
 
 ## 1. Color system
