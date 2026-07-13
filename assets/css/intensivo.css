@@ -343,7 +343,7 @@ html,body{margin:0}
    The body .lead column is max-width:54ch on Mulish clamp(17px,1.5vw,20px) (ch≈0.6em), i.e.
    clamp(551px,48.6vw,648px). Reusing that exact range + auto margins makes the emphasis track
    and center on the same column as the copy above/below, instead of sitting full-width and left. */
-.panel.bg-white:not(.wide) > .quote { max-width: clamp(551px, 48.6vw, 648px); margin-left: auto; margin-right: auto; }
+.panel.bg-white:not(.wide) > .quote { max-width: clamp(551px, 48.6vw, 648px); margin: 36px auto; }
 
 /* 'Por eso nace' closing statement (direct child .lead beneath the 3 cards) carries its
    presentation inline, which the deployed CSP strips -> it renders left-aligned, full-.lead-width
@@ -361,13 +361,100 @@ strong { font-weight: 700; }
    Re-centre only this section's head lead (id-scoped) so the intro column aligns under the heading. */
 #pilares .head .lead { margin-inline: auto; }
 
-/* 'ALMAVIVA y terapia' intro: the two emphasis lines directly under the H2 carry their size
-   inline (clamp 24-38 locally; the CSP strips it on deploy -> base .quote clamp 28-46). Both read
-   too large and compete with the H2 (clamp 33-56). Reduce ONLY font-size + line-height to a
-   supporting-intro scale that stays subordinate to the heading. Scoped to the two quotes that sit
-   immediately after this panel's .head — the other bg-lav quote (Compromiso panel) follows .points,
-   not .head, so .head+.quote excludes it. !important overrides the inline font-size so the reduction
-   also holds in local preview, not only after the deploy CSP strip. Nothing else is touched:
-   alignment/weight/style/width still come from the inline styles (local) / base .quote (deploy). */
-.panel.bg-lav > .head + .quote,
-.panel.bg-lav > .head + .quote + .quote { font-size: clamp(18px, 1.9vw, 23px) !important; line-height: 1.45; }
+/* 'ALMAVIVA y terapia' intro: the two emphasis lines directly under the H2. Their full
+   presentation (centered, 760px, normal weight, and the approved reduced supporting-intro size
+   from the 2026-07-12 typography pass) now lives entirely in CSS so it survives the deploy CSP
+   strip. No !important needed — the competing inline font-size has been removed from the markup. */
+.panel.bg-lav > .head + .quote { text-align: center; max-width: 760px; margin: 0 auto; font-style: normal; font-weight: 500; font-size: clamp(18px, 1.9vw, 23px); line-height: 1.45; }
+.panel.bg-lav > .head + .quote + .quote { text-align: center; max-width: 760px; margin: 24px auto 0; font-style: normal; font-weight: 500; font-size: clamp(18px, 1.9vw, 23px); line-height: 1.45; }
+
+/* ==========================================================================
+   PRODUCTION-PARITY: inline-style -> scoped-CSS migration (2026-07-13)
+   The deployed CSP is `style-src 'self'` (no unsafe-inline), so every inline
+   style="" attribute in intensivo.html was silently dropped online — collapsing
+   the hero CTA color, typography, spacing and, most visibly, the absolutely-
+   positioned progression (every right card piled at top-right, every left card
+   at top-left). Each visual-critical inline declaration is reproduced below as a
+   scoped, page-only rule so local and production render identically. The markup
+   now carries zero style="" attributes. This stylesheet is loaded only by
+   intensivo.html, so these selectors cannot affect any other page.
+   ========================================================================== */
+
+/* Hero: h1 top gap + terracotta pill CTA (was falling back to .btn-primary forest). */
+.hero-in .h1{margin-top:22px}
+.btn-cta{background:#A8501F;border-radius:40px;padding:18px 38px}
+.btn-cta:hover{background:#8F4319}
+
+/* Section head band (En resumen + Método intro wrappers). */
+.head-band{background:#FAF6EE;position:relative;z-index:2;padding:10px 0 18px}
+.head-band .head{margin-bottom:0}
+#pilares > .head-band{margin-bottom:48px}
+
+/* Antes de empezar (bg-white panel). */
+.panel.bg-white:not(.wide):not(.tight) > .head + .lead{margin-top:6px}
+.panel.bg-white:not(.wide) .callout-strong{padding:14px 46px}
+.panel.bg-white:not(.wide) .callout-strong .serif{font-style:italic}
+
+/* Por eso nace (bg-blue panel head + emphasis quote). */
+.panel.bg-blue > .head{max-width:840px}
+.panel.bg-blue > .head > .quote{color:#3A4429;font-style:normal;font-weight:500;margin-bottom:24px}
+
+/* ¿Es este programa para ti? + the bordered ivory panels. */
+.panel.bg-ivory{border:1px solid #EDE7DB}
+.panel.bg-ivory:not(.wide) > .head + .lead,
+.panel.bg-ivory:not(.wide) > .head + .lead + .lead{text-align:center;max-width:680px;margin:0 auto}
+.panel.bg-ivory .list{max-width:760px;margin-left:auto;margin-right:auto}
+.panel.bg-ivory .callout{max-width:760px;margin:34px auto 0;background:#F4EFE6;border-left-color:#9A9A9A}
+.co-h{font-family:'Cormorant Garamond',serif;font-size:19px;color:#5f6155;margin:0 0 10px;font-weight:600}
+.panel.bg-ivory .callout .small{font-size:15px}
+.panel.bg-ivory:not(.wide) > .callout + .lead{text-align:center;max-width:700px;margin:30px auto 0;font-style:italic;font-family:'Cormorant Garamond',serif;font-size:22px;color:#3A4429}
+
+/* Método pillars — subsequent body paragraphs (was inline margin-top:12px, x11). */
+.pill-txt + .pill-txt{margin-top:12px}
+.pill-close + .pill-close{margin-top:12px}
+
+/* La progresión — head gap + absolute stage/dot placement (was inline top/left). */
+.sec.bg-cream > .head{margin-bottom:40px}
+.weeks .wstage.wk1{top:14%}
+.weeks .wstage.wk2{top:38%}
+.weeks .wstage.wk3{top:62%}
+.weeks .wstage.wk4{top:86%}
+.weeks .wdot.wk1{left:41%;top:14%}
+.weeks .wdot.wk2{left:59%;top:38%}
+.weeks .wdot.wk3{left:41%;top:62%}
+.weeks .wdot.wk4{left:59%;top:86%}
+.sec.bg-cream > .weeks + .lead{text-align:center;max-width:720px;margin:88px auto 0;font-style:italic;font-family:'Cormorant Garamond',serif;font-size:22px;color:#3A4429}
+
+/* El acompañamiento (bg-beige panel). */
+.panel.bg-beige .callout-strong{margin-top:42px;text-align:left;padding:30px 46px}
+.panel.bg-beige .callout-strong .serif{text-align:center;margin:0}
+.panel.bg-beige .callout-strong .small{text-align:center;max-width:640px;margin:6px auto 0;font-size:14.5px}
+.acc-close{text-align:center;font-family:'Spectral',serif;font-style:italic;color:#3A4429;font-size:clamp(20px,2.3vw,28px);line-height:1.35;max-width:760px;margin:32px auto 0}
+
+/* Al final del proceso (bg-ivory panel closing note). */
+.panel.bg-ivory:not(.wide) > .small{text-align:center;max-width:640px;margin:34px auto 0;font-style:italic}
+
+/* Compromiso real (bg-lav panel closing quote, after .points). */
+.panel.bg-lav > .points + .quote{text-align:center;max-width:680px;margin:40px auto 0;font-style:normal;font-weight:500;font-size:clamp(24px,3vw,36px)}
+
+/* Cómo elegir (wide bg-ivory panel closing leads). */
+.panel.bg-ivory.wide > .chooser + .lead,
+.panel.bg-ivory.wide > .chooser + .lead + .lead{text-align:center;max-width:640px;margin:28px auto 0;font-style:italic;font-family:'Cormorant Garamond',serif;font-size:22px;color:#3A4429}
+
+/* ALMAVIVA y terapia (bg-lav panel body lead, clinical callout, comparison label). */
+.panel.bg-lav > .head + .quote + .quote + .lead{text-align:center;max-width:680px;margin:24px auto 0}
+.panel.bg-lav .callout{max-width:780px;margin:30px auto 0;background:#fff;border-left-color:#9A9A9A}
+.panel.bg-lav > .lab{text-align:center;margin:42px 0 4px}
+
+/* Inversión (tight bg-white panel). */
+.panel.tight.bg-white > .head + .lead{text-align:center;max-width:600px;margin:0 auto}
+.panel.tight.bg-white > .small{text-align:center;max-width:540px;margin:22px auto 0}
+
+/* Sesión de descubrimiento. */
+#descubrimiento{background:#F4EFE6}
+#descubrimiento > .inner{position:relative;z-index:1}
+#descubrimiento h2.h2{margin:20px 0 0}
+#descubrimiento .disc .lead{margin-top:22px}
+
+/* Footer inner. */
+.close .inner{position:relative;z-index:1;text-align:center}
