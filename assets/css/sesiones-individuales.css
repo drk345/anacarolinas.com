@@ -336,3 +336,76 @@ body{margin:0;background:#F4EFE6;color:#403F36;font-family:'Mulish',sans-serif;f
 
 /* G35 (Batch-4) — mobile tap target for the "Conocer más" path links (>=44px). */
 @media (max-width: 760px) { .path-link { min-height: 44px; } }
+
+/* ==========================================================================
+   Production-parity: inline-style -> scoped CSS migration (2026-07-13).
+   The deployed CSP (style-src 'self') strips inline style="" attributes, so the
+   per-element geometry/sizing below was lost online: the section threads/bridge
+   decorations lost their positioning context, the ring- and tools-diagram nodes
+   collapsed to their default position, section touching-edge paddings and the
+   heading/prose reading caps reverted, and several centred blocks/colours were
+   lost. Each declaration is reproduced here, scoped to this page (all new
+   general-purpose classes carry the `si-` namespace). Loads only on this page.
+   Redundant inline declarations (line 80 background == .s-beige; two box-kicker
+   margin:0/inherited-colour cases) are removed without a rule; see the report.
+   ========================================================================== */
+
+/* position:relative for every section, so the absolute .thread/.bridge ornaments
+   anchor to their section (every other absolute descendant already has a closer
+   positioned ancestor: .ringwrap/.twwheel/.wheel/.boxq/.conv-sec are relative). */
+.sec{position:relative}
+
+/* Paired adjacent sections merge visually via reduced touching-edge padding */
+.si-pb-a{padding-bottom:clamp(28px,3.5vw,44px)}
+.si-pt-a{padding-top:clamp(28px,3.5vw,44px)}
+.si-pb-b{padding-bottom:clamp(30px,4vw,48px)}
+.si-pt-b{padding-top:clamp(30px,4vw,48px)}
+
+/* Heading / prose reading caps (base .h2 sets none; base .lead/.body cap is 54ch) */
+.si-mw18{max-width:18ch}
+.si-mw20{max-width:20ch}
+.si-mw22{max-width:22ch}
+.si-mw24{max-width:24ch}
+.si-mw48{max-width:48ch}
+.si-mw60{max-width:60ch}
+.si-mw62{max-width:62ch}
+
+/* Centred emphasis quotes */
+.si-quote-c{text-align:center;max-width:30ch;margin-left:auto;margin-right:auto}
+.si-tac{text-align:center}
+
+/* Ring diagram node positions (desktop; base .ring-node is position:absolute; <=680 static) */
+.ring-node.rn-c1{left:67.8%;top:19.2%}
+.ring-node.rn-c2{left:85.6%;top:50%}
+.ring-node.rn-c3{left:67.8%;top:80.8%}
+.ring-node.rn-c4{left:32.2%;top:80.8%}
+.ring-node.rn-c5{left:14.4%;top:50%}
+.ring-node.rn-c6{left:32.2%;top:19.2%}
+
+/* Tools-wheel node positions */
+.tw-node.tn-c1{left:50%;top:14%}
+.tw-node.tn-c2{left:78.2%;top:27.6%}
+.tw-node.tn-c3{left:85.1%;top:58%}
+.tw-node.tn-c4{left:65.6%;top:82.4%}
+.tw-node.tn-c5{left:34.4%;top:82.4%}
+.tw-node.tn-c6{left:14.9%;top:58%}
+.tw-node.tn-c7{left:21.8%;top:27.6%}
+
+/* Tools-section pull quote (single line, larger) */
+.si-pull-tools{margin:clamp(26px,3vw,38px) auto 0}
+.si-quote-nowrap{max-width:none;white-space:nowrap;font-size:clamp(18px,2.2vw,28px)}
+
+/* Boxes + accents */
+.boxq .box-kicker{color:#23271E}
+.boxq-in .body{margin:0}
+.box-stone .body{margin:0}
+.box-deep{text-align:center}
+.si-box-olive{text-align:center;background:#3A4429}
+.si-accent{color:#A8501F}
+
+/* Price CTA buttons centred */
+.price .btn{text-align:center}
+
+/* Convicción section + closing footer inner */
+.conv-sec{text-align:center}
+.closing .shell-n{position:relative;text-align:center}
