@@ -358,3 +358,55 @@
 /* F28-partial: inline text colors moved to classes (deployed CSP strips inline styles). */
 .c-forest{color:#4E5A37}
 .c-muted{color:#6A675F}
+
+/* ==========================================================================
+   Production-parity: inline-style -> scoped CSS migration (2026-07-13).
+   The deployed CSP (style-src 'self') strips inline style="" attributes, so the
+   per-element sizing/spacing below was lost online (icons fell back to the base
+   18px, section paddings and heading/paragraph margins collapsed to 0 via the
+   *{margin:0} reset, the full-width include row lost its span, and the two
+   emphasis font-sizes reverted). Each declaration is reproduced here, scoped to
+   this page's elements. Loads only on foco.html. Text colors were already moved
+   to classes above; nothing here is redundant (no base rule sets these values).
+   ========================================================================== */
+
+/* Icon sizes (base .icw is 18px; therapy badges/dots + price checks resize) */
+.tb-yes .icw{width:22px;height:22px}
+.td-yes .icw{width:12px;height:12px}
+.tb-no .icw{width:20px;height:20px}
+.td-no .icw{width:11px;height:11px}
+.picheck .icw{width:11px;height:11px}
+
+/* Hero: keep the closing hero-sub phrase on one line */
+.hsub span{white-space:nowrap}
+
+/* Section vertical paddings (override the base .sec 104px on specific bands) */
+#que-es{padding-bottom:86px}
+#recorrido{padding-top:90px}
+section.bg-beige{padding-bottom:52px}
+.foco-terapia{padding-top:44px}
+
+/* Section-title (.stitle) bottom margins (base .stitle sets none) */
+.entrena-left .stitle{margin-bottom:24px}
+.foco-why .stitle{margin-bottom:20px}
+#que-es .stitle{margin-bottom:54px}
+#recorrido .stitle{margin-bottom:20px}
+.foco-incl .stitle{margin-bottom:8px}
+.foco-who .stitle{margin-bottom:8px}
+section.bg-beige .stitle{margin-bottom:18px}
+.foco-terapia .stitle{margin-bottom:16px}
+#agendar .stitle{margin-bottom:18px}
+
+/* Paragraph / block spacing + the two emphasis font-sizes */
+#que-es .inner > div.center{margin-bottom:8px}
+#que-es .two > div > .p:first-of-type{margin-bottom:22px}
+.foco-why .p.narrow{margin-bottom:34px}
+.foco-why .pullquote{font-size:clamp(24px,3vw,36px)}
+.foco-incl .divider{margin-top:26px}
+.incl > .inclrow:last-child{grid-column:1/-1}
+.whocard-foot{margin-top:auto;padding-top:30px}
+.whocard-foot .p-sm{font-size:15px}
+.guideband .p.c-forest{margin-top:32px}
+.foco-terapia .p.narrow{margin-top:44px}
+.foco-terapia .footnote{margin-top:18px}
+#agendar .p.c-muted{margin-top:30px}
