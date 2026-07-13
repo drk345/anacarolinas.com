@@ -337,3 +337,37 @@ html,body{margin:0}
 /* F28-partial: inline color moved to class (deployed CSP strips inline styles).
    Light caption on the dark callout-strong band. */
 .t-wash{color:#CFD8C9}
+
+/* 'Antes de empezar' emphasis quote: center within the section's body-copy column.
+   .quote is shared, so scope to the direct child of the (non-wide) bg-white panel — the only match.
+   The body .lead column is max-width:54ch on Mulish clamp(17px,1.5vw,20px) (ch≈0.6em), i.e.
+   clamp(551px,48.6vw,648px). Reusing that exact range + auto margins makes the emphasis track
+   and center on the same column as the copy above/below, instead of sitting full-width and left. */
+.panel.bg-white:not(.wide) > .quote { max-width: clamp(551px, 48.6vw, 648px); margin-left: auto; margin-right: auto; }
+
+/* 'Por eso nace' closing statement (direct child .lead beneath the 3 cards) carries its
+   presentation inline, which the deployed CSP strips -> it renders left-aligned, full-.lead-width
+   and unstyled. Reproduce that exact presentation in CSS (scoped to the sole bg-blue panel's
+   direct-child .lead) so it stays centered, 760px, italic Cormorant on deploy. Matches the inline. */
+.panel.bg-blue > .lead { max-width: 760px; margin: 40px auto 0; text-align: center; font-style: italic; font-family: 'Cormorant Garamond', serif; font-size: clamp(19px, 2.1vw, 25px); color: #3A4429; }
+
+/* <strong> emphasis: force real bold weight. The body font's <strong> only reaches 400 here
+   (UA 'bolder' from the light .lead weight 300), so it doesn't read as bold. 700 renders a
+   clearly heavier weight (synthesized where no bold file exists). One <strong> on this page. */
+strong { font-weight: 700; }
+
+/* Método ALMAVIVA intro: the .head intro paragraph loses its auto-centering to the shared
+   '.head .lead{margin:0}' rule, so its 54ch column sits left-of-centre under the centred heading.
+   Re-centre only this section's head lead (id-scoped) so the intro column aligns under the heading. */
+#pilares .head .lead { margin-inline: auto; }
+
+/* 'ALMAVIVA y terapia' intro: the two emphasis lines directly under the H2 carry their size
+   inline (clamp 24-38 locally; the CSP strips it on deploy -> base .quote clamp 28-46). Both read
+   too large and compete with the H2 (clamp 33-56). Reduce ONLY font-size + line-height to a
+   supporting-intro scale that stays subordinate to the heading. Scoped to the two quotes that sit
+   immediately after this panel's .head — the other bg-lav quote (Compromiso panel) follows .points,
+   not .head, so .head+.quote excludes it. !important overrides the inline font-size so the reduction
+   also holds in local preview, not only after the deploy CSP strip. Nothing else is touched:
+   alignment/weight/style/width still come from the inline styles (local) / base .quote (deploy). */
+.panel.bg-lav > .head + .quote,
+.panel.bg-lav > .head + .quote + .quote { font-size: clamp(18px, 1.9vw, 23px) !important; line-height: 1.45; }
