@@ -67,6 +67,14 @@
 .btn-terra{background:var(--terra);color:var(--ivory)}
 .btn-solid{background:var(--forestd);color:var(--ivory)}
 .btn-line{background:transparent;border-color:var(--forestd);color:var(--forestd)}
+/* Contact-button interaction states: reproduce the two dead non-standard hover
+   attributes removed from sobre-ana.html as real hover + keyboard-focus states.
+   Page-owned .btn already declares the matching transitions. Scoped to this
+   page's only .btn-terra / .btn-line (the two contact CTAs). Values are the
+   exact authored hex (#1E3D34 is the forest-deep heading tone, distinct from
+   --forestd #3A4429; #FAF6EE == --ivory). */
+.btn-terra:hover,.btn-terra:focus-visible{transform:translateY(-2px)}
+.btn-line:hover,.btn-line:focus-visible{background:#1E3D34;color:#FAF6EE;border-color:#1E3D34}
 .arrow{font-family:var(--serif);font-size:1.2em;line-height:0}
 .romanrow{display:grid;grid-template-columns:52px 1fr;gap:14px;align-items:baseline;border-top:1px solid #ddd4c2;padding-top:16px}
 .roman{font-family:var(--serif);font-size:clamp(26px,2.6vw,38px);font-style:italic;color:var(--terra);line-height:1}
