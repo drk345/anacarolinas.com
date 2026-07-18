@@ -843,6 +843,7 @@ section[id] { scroll-margin-top: 96px }
 .ed-home-exact .pcard { background: var(--card); border: 1px solid rgba(168,80,31,.2); border-radius: 18px; padding: 26px 22px; }
 .ed-home-exact .pname { font-family: Spectral, serif; font-weight: 500; font-size: 21px; line-height: 1.2; color: var(--olive); margin-bottom: 3px; min-height: 2.4em; }
 .ed-home-exact .pcard-tag { font-size: 15px; line-height: 1.35; margin-bottom: 10px; min-height: 2.7em; }
+.ed-home-exact .sec-pilares .pcard .small { font-weight: 400; }   /* pillar-card body: 300 -> 400 for stroke legibility; size/line-height unchanged */
 .ed-home-exact .pgrid-mt { margin-top: 34px; }
 
 .ed-home-exact .imagine { position: relative; border-radius: 30px; overflow: hidden; min-height: 420px; display: flex; align-items: center; }
@@ -954,7 +955,7 @@ section[id] { scroll-margin-top: 96px }
 .ed-home-exact .contacto-ring { width: 56px; height: 56px; border-radius: 50%; border: 1.5px solid rgba(244,239,230,.4); display: flex; align-items: center; justify-content: center; margin: 0 auto 24px; color: var(--accent-light); }
 .ed-home-exact .contacto-title { color: var(--cream); }
 .ed-home-exact .contacto-lead { font-size: clamp(20px, 2vw, 27px); line-height: 1.5; color: #E4E6DA; max-width: 520px; margin: 0 auto 12px; }
-.ed-home-exact .contacto-note { font-size: clamp(17px, 1.6vw, 20px); color: var(--accent-light); margin-bottom: 38px; }
+.ed-home-exact .contacto-note { font-size: clamp(17px, 1.6vw, 20px); color: var(--accent-light); max-width: 600px; margin-inline: auto; margin-bottom: 38px; }
 .ed-home-exact .contacto-cards { display: flex; flex-wrap: wrap; gap: 16px; justify-content: center; max-width: 760px; margin: 0 auto; }
 .ed-home-exact .ccard-ic { flex: 0 0 auto; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; }
 .ed-home-exact .ccard-ic-wa { background: var(--accent); }
@@ -1087,6 +1088,7 @@ section[id] { scroll-margin-top: 96px }
    these scoped rules only deepen the specific text/background pairs that fail AA. */
 .ed-sec--cream3 .ed-eyebrow__txt { color: #8F4319 }               /* privacidad 03/06/09/12 eyebrows on Cream3: 4.45 -> ~5.7 */
 .ed-home-exact .sec-programas .e-terra { color: #8F4319 }         /* "Los caminos" eyebrow on Cream3: 4.45 -> ~5.7 */
+.ed-home-exact .sec-antes .e-terra { color: #8F4319 }             /* "Antes de empezar" eyebrow + closing on Cream3: 4.45 -> ~5.7 */
 .ed-home-exact .sec-sobre .e-terra { color: #7A3813 }             /* "Sobre mí" eyebrow + role on Salvia: 3.2 -> ~5.1 */
 .ed-home-exact .sec-sobre .e-olive { color: var(--olive) }        /* sobre-quote Olive2 on Salvia: 4.31 -> ~6.0 */
 
