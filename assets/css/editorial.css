@@ -902,11 +902,27 @@ section[id] { scroll-margin-top: 96px }
 .ed-home-exact .introhead-metodo { max-width: 700px; margin-bottom: 14px; }
 .ed-home-exact .mb18 { margin-bottom: 18px; }
 .ed-home-exact .pretty { text-wrap: pretty; }
-.ed-home-exact .stepswrap { position: relative; width: fit-content; max-width: 100%; margin: 46px auto 0; }
-.ed-home-exact .stepline { position: absolute; left: 27px; top: 14px; bottom: 14px; width: 1.5px; background: rgba(58,68,41,.2); }
-.ed-home-exact .steplist { display: flex; flex-direction: column; gap: 22px; }
-.ed-home-exact .steprow { display: flex; align-items: center; gap: 24px; }
-.ed-home-exact .quote-metodo { text-align: center; max-width: 680px; margin: 40px auto 0; text-wrap: balance; }
+/* Expanded movement sequence: Ana-approved copy is substantially longer than
+   the old compact step labels, so each movement is a readable block — number
+   circle + title on a header row, explanatory paragraphs below. A subtle
+   vertical thread links the three circles on desktop; on phones the body spans
+   full width for a comfortable measure and the thread is hidden. Reuses the
+   existing .stepnum circle. Scoped to the homepage #metodo section only. */
+.ed-home-exact .metodo-flow { max-width: 620px; margin: 44px auto 0; display: flex; flex-direction: column; gap: 40px; }
+.ed-home-exact .mvmt { position: relative; display: grid; grid-template-columns: 56px 1fr; column-gap: 24px; row-gap: 12px; }
+.ed-home-exact .mvmt:not(:last-child)::before { content: ""; position: absolute; left: 28px; top: 28px; width: 1.5px; height: calc(100% + 40px); background: rgba(58,68,41,.2); }
+.ed-home-exact .mvmt-num { grid-column: 1; grid-row: 1; align-self: center; }
+.ed-home-exact .mvmt-title { grid-column: 2; grid-row: 1; align-self: center; font-family: Spectral, Georgia, serif; font-weight: 500; font-size: clamp(22px, 2.2vw, 28px); line-height: 1.2; color: var(--olive); }
+.ed-home-exact .mvmt-body { grid-column: 2; grid-row: 2; }
+.ed-home-exact .mvmt-p { margin: 0 0 12px; }
+.ed-home-exact .mvmt-p:last-child { margin-bottom: 0; }
+.ed-home-exact .metodo-refrain { text-align: center; margin: 40px auto 0; font-family: Spectral, Georgia, serif; font-style: italic; font-weight: 500; font-size: clamp(23px, 2.4vw, 31px); line-height: 1.3; color: var(--accent); }
+.ed-home-exact .metodo-note { text-align: center; max-width: 620px; margin: 24px auto 0; font-size: clamp(17px, 1.5vw, 19px); line-height: 1.6; color: var(--olive2); }
+.ed-home-exact .metodo-final { text-align: center; max-width: 620px; margin: 14px auto 0; font-family: Mulish, sans-serif; font-weight: 400; font-size: 16px; line-height: 1.65; color: #6A675F; }
+@media (max-width: 600px) {
+  .ed-home-exact .mvmt-body { grid-column: 1 / -1; }
+  .ed-home-exact .mvmt:not(:last-child)::before { display: none; }
+}
 
 /* Los 5 pilares (wheel diagram + card list) */
 .ed-home-exact .sec-pilares { padding: 54px 32px; }
