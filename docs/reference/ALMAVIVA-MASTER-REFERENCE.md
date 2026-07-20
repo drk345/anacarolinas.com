@@ -13,6 +13,8 @@ Supersedes: `docs/reports/almaviva-frozen-spec.md`
 
 - **2026-07-13** — Added the **Secure by design** section (see below) and the automated guardrails that enforce it: a fail-closed build security gate (`scripts/check-security.py`, wired into `scripts/build-pages.sh`), a dependency-free CSP-equivalent local preview (`scripts/serve-production.py`), a post-deploy verifier (`scripts/verify-live.sh`), and `docs/SECURE-DEVELOPMENT.md`. No brand, scientific, program, typography, or palette guidance changed.
 
+- **2026-07-20** — Standardized the programme name to **ALMAVIVA Focus** (shortened: **Focus**), bringing this reference into line with the approved naming in the current Base Estratégica, Sistema Operativo and Guía de Comunicación. `ALMAVIVA Foco` is retired as the programme brand in all public-facing copy; the visible name was updated across `index.html`, `programas.html`, `intensivo.html`, `sesiones-individuales.html`, `conecta.html` and `foco.html`. The technical slug, filename, asset paths and CSS identifiers (`foco.html`, `/foco`, `foco.css`, `chip-foco`, `assets/img/foco/`) are deliberately **unchanged**, as are ordinary Spanish uses of the noun "foco". Dated historical entries in this document keep their original wording. No positioning, pricing, duration, palette, typography or scientific guidance changed. See Section 5.1 for the canonical naming rule.
+
 ---
 
 ## 1. Color system
@@ -61,7 +63,7 @@ Adding, removing, or reassigning any family requires updating this section first
 Use this for all conversion-intent links to `contacto.html`.
 
 **Secondary action labels (navigation / exploration):**
-- `"Conocer Conecta"` / `"Conocer Foco"` / `"Conocer Intensivo"` — programme card CTAs (the 3 main programs, home and Programas page)
+- `"Conocer Conecta"` / `"Conocer Focus"` / `"Conocer Intensivo"` — programme card CTAs (the 3 main programs, home and Programas page)
 - `"Ver programas ALMAVIVA"` / `"Conocer programas"` — navigation from other pages
 - `"Saber más sobre Ana"` / `"Info sobre las sesiones"` — navigation CTAs
 - `"Reservar"` — nav button only (intentionally brief for nav UI)
@@ -99,10 +101,17 @@ Use this for all conversion-intent links to `contacto.html`.
 ALMAVIVA's real offer structure is exactly **3 main programs**, always presented in this fixed order:
 
 1. **ALMAVIVA Conecta**
-2. **ALMAVIVA Foco**
+2. **ALMAVIVA Focus**
 3. **ALMAVIVA Intensivo**
 
 These 3 are co-equal main programs — none is subordinate to another, and none should be dropped or reordered.
+
+**Programme naming (canonical):**
+- Official formal name: **ALMAVIVA Focus**
+- Approved shortened name: **Focus**
+- Public-facing copy must **not** use `ALMAVIVA Foco` as the programme brand.
+- The technical slug and filename remain **`foco.html`** and **`/foco`** (likewise `foco.css`, `chip-foco`, `assets/img/foco/` and related identifiers) — these are deliberately unchanged and must not be renamed.
+- Ordinary Spanish uses of the noun "foco" (meaning focus/emphasis) are unaffected by this rule.
 
 **Supporting/secondary offerings** (valid as supporting CTA language; must never be presented as a 4th main program or as a replacement for one of the 3):
 - **Sesiones Individuales** — one-to-one accompaniment, positioned as a distinct, secondary offering (its own page, `sesiones-individuales.html`, reachable from nav and from a dedicated home section)
@@ -110,7 +119,7 @@ These 3 are co-equal main programs — none is subordinate to another, and none 
 - **Guía** (where referenced) — a supporting orientation/summary document, not a program
 
 Do not:
-- Reduce the main offer set to 2 programs (the old Foco + Intensivo–only framing is retired)
+- Reduce the main offer set to 2 programs (the old Focus + Intensivo–only framing is retired)
 - Inflate the offer set to a "4 caminos" or "cuatro caminos" framing that treats Sesiones/Exploratoria/Guía as equal-rank paths alongside the 3 main programs
 - Present Sesiones Individuales, Sesión Exploratoria, or Guía as a card inside the 3-program grid
 
@@ -121,7 +130,7 @@ The homepage presents all 3 programs as cards, in the fixed order above, each wi
 | Order | Label | Title | Description | CTA | Links to |
 |---|---|---|---|---|---|
 | 1 | En comunidad | ALMAVIVA Conecta | Entrena en grupo y aprende junto a otras personas en un mismo proceso. | Conocer Conecta → | `conecta.html` |
-| 2 | Objetivo concreto | ALMAVIVA Foco | Entrenamiento dirigido a un objetivo específico, con foco y resultados claros. | Conocer Foco → | `foco.html` |
+| 2 | Objetivo concreto | ALMAVIVA Focus | Entrenamiento dirigido a un objetivo específico, con foco y resultados claros. | Conocer Focus → | `foco.html` |
 | 3 | Inmersión completa | ALMAVIVA Intensivo | El recorrido completo por los cinco pilares para una transformación profunda y sostenida. | Conocer Intensivo → | `intensivo.html` |
 
 This card grid (`ed-home-programs__grid` of `ed-fcard` items) is the canonical copy source. Any future edit to program card copy should update this table to keep it in sync with `index.html`.
@@ -130,14 +139,14 @@ Sesiones Individuales appears on the homepage as its own, separate 2-column sect
 
 ### 5.3 Programas page (`programas.html`): required structure
 
-For consistency with the homepage, `programas.html` should present the **same 3-program structure**, in the same order (Conecta, Foco, Intensivo), as its main content.
+For consistency with the homepage, `programas.html` should present the **same 3-program structure**, in the same order (Conecta, Focus, Intensivo), as its main content.
 
 **Resolved 2026-07-02 (Session 007):** `programas.html` now shows all 3 programs — hero sub, band heading ("Tres caminos para un mismo método"), the programme grid (`aria-label="Los tres programas ALMAVIVA"`, Conecta → Foco → Intensivo), and the distinction bridge were all updated to match. The Conecta panel reuses the existing `programas-sesiones-*` photo asset (same editorial-portrait treatment as the Foco/Intensivo panels — no panel photo on this page depicts program content literally, so this is consistent with the existing pattern) pending a dedicated Conecta photo from Ana.
 
 **What belongs on `programas.html` once aligned:**
 - Hero (2-col, white/cream bg, Spectral H1, sub sentence, "Agendar conversación inicial" CTA)
 - Intro band presenting the 3 programs as a set (heading should reflect 3, not 2 — do not use "dos caminos" language)
-- 3 programme cards/panels: Conecta, Foco, Intensivo (one-sentence desc each, "Conocer Conecta" / "Conocer Foco" / "Conocer Intensivo" CTAs), in that order
+- 3 programme cards/panels: Conecta, Focus, Intensivo (one-sentence desc each, "Conocer Conecta" / "Conocer Focus" / "Conocer Intensivo" CTAs), in that order
 - Distinction/bridge copy connecting the 3 programs under one shared method
 - Therapy disclaimer (`ed-therapy`)
 - Olive CTA strip ("¿Por dónde empezamos?", "Agendar conversación inicial")
@@ -151,7 +160,7 @@ For consistency with the homepage, `programas.html` should present the **same 3-
 - "Conozcámonos" CTA
 - "¿Cuál es para ti?" decision helper
 
-**Sesiones Individuales / Sesión Exploratoria / Guía relative to Programas:** these remain secondary, supporting offerings. They may be cross-referenced from Programas as secondary paths (e.g., a small supporting note or link), but must never appear as a 4th card in the main program grid and must never be styled or ranked as equal to Conecta/Foco/Intensivo.
+**Sesiones Individuales / Sesión Exploratoria / Guía relative to Programas:** these remain secondary, supporting offerings. They may be cross-referenced from Programas as secondary paths (e.g., a small supporting note or link), but must never appear as a 4th card in the main program grid and must never be styled or ranked as equal to Conecta/Focus/Intensivo.
 
 ---
 
@@ -160,7 +169,7 @@ For consistency with the homepage, `programas.html` should present the **same 3-
 - All images: real photography — no illustrations, no icon-led layouts
 - `picture`/`srcset`/WebP+JPEG pairs, 800w + 1200w variants
 - `object-fit: cover` on all panel images
-- Panels (Conecta/Foco/Intensivo): scrim max opacity ~50% — images must feel natural, not over-darkened
+- Panels (Conecta/Focus/Intensivo): scrim max opacity ~50% — images must feel natural, not over-darkened
 - Hero images: `object-position: 50% 15%` on Programas (preserves Ana's head/hair in the crop)
 
 ---
